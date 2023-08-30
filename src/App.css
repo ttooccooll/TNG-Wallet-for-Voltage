@@ -1,15 +1,20 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('Sterilict-L3aen.ttf') format('truetype');
+}
+
 body {
-  background-color: #192734;
-  font-family: monospace;
+  background-color: #000000;
+  font-family: 'MyFont';
 }
 
 header {
-  border-bottom: 2px solid #ffbf46;
+  border-bottom: 20px solid #CE9712;
 }
 
 h1 {
   text-align: center;
-  color: #8a4fff;
+  color: #3787FE;
 }
 
 img {
@@ -18,22 +23,27 @@ img {
 }
 
 footer {
-  border-top: 2px solid #ffbf46;
+  border-top: 20px solid #CE9712;
   padding: 1%;
   text-align: center;
   position: fixed;
-  bottom: 0;
+  bottom: 10;
   left: 0;
   right: 0;
+  margin-top: 2%;
+  position: relative;
+  z-index: 1;
 }
 
 footer p {
-  color: #8a4fff;
+  color: #D45F10;
+  padding: 1%;
+  margin: 1%;
 }
 
 .balance-card {
-  background-color: #ffbf46;
-  border: 2px solid #8a4fff;
+  background-color: #3787FE;
+  border: 0px solid #0946EE;
   padding: 1%;
   width: 25%;
   margin-top: 3%;
@@ -44,6 +54,7 @@ footer p {
 .balance-card p {
   font-size: 1.2rem;
   font-weight: bold;
+  font-family: 'MyFont';
 }
 
 .row {
@@ -54,8 +65,8 @@ footer p {
 }
 
 .row-item {
-  background-color: ghostwhite;
-  border: 2px solid #8a4fff;
+  background-color: #D45F10;
+  border: 0px solid #3787FE;
   border-radius: 5px;
   height: 300px;
   width: 40%;

@@ -1,8 +1,14 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('Sterilict-L3aen.ttf') format('truetype');
+}
+
 form {
   margin: 2% auto;
   display: flex;
   flex-direction: column;
   text-align: center;
+  font-family: 'MyFont';
 }
 
 form {
@@ -15,13 +21,16 @@ form .button {
 
 section h3 {
   text-align: center;
+  font-family: 'MyFont';
 }
 
 section p {
   word-wrap: break-word;
+  font-family: 'MyFont';
 }
 
 .close-button {
-  cursor: pointer;
+  cursor: crosshair;
   text-align: end;
+  font-family: 'MyFont';
 }

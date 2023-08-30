@@ -110,7 +110,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>pleb wallet</h1>
+        <h1>Pleb Wallet: The Next Generation</h1>
       </header>
       <Buttons />
       <div className="row">
@@ -132,7 +132,7 @@ function App() {
         </div>
       </div>
       <footer>
-        <p>Engineering</p>
+        <p>NCC-1701-D</p>
       </footer>
     </div>
   );

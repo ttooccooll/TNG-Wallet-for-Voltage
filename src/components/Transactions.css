@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'MyFont';
+  src: url('Sterilict-L3aen.ttf') format('truetype');
+}
+
 h3 {
   padding-left: 2%;
 }

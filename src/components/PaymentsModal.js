@@ -115,7 +115,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
             }
           />
           <button className="button" onClick={(e) => handleSend(e)}>
-            Submit
+            Engage
           </button>
         </form>
       )}
@@ -132,7 +132,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
             }
           />
           <button className="button" onClick={(e) => handleReceive(e)}>
-            Submit
+            Engage
           </button>
         </form>
       )}
