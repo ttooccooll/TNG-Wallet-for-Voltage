@@ -132,7 +132,7 @@ function App() {
         </div>
       </div>
       <footer>
-        <p>Made by plebs, for plebs.</p>
+        <p>Engineering</p>
       </footer>
     </div>
   );
