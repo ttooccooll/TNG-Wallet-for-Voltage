@@ -85,7 +85,7 @@ footer p {
   border-top-width: 0px;
   height: 70px;
   width: 40%;
-  overflow: scroll;
+  overflow: flex;
   margin-left: 2%;
   margin-right: .5%;
   flex: content;
@@ -101,7 +101,7 @@ footer p {
   border-top-width: 0px;
   height: 70px;
   width: 10%;
-  overflow: scroll;
+  overflow: flex;
   margin-right: .5%;
 }
 
@@ -114,7 +114,7 @@ footer p {
   border-top-width: 0px;
   height: 70px;
   width: 10%;
-  overflow: scroll;
+  overflow: flex;
   margin-right: .5%;
 }
 
@@ -127,7 +127,7 @@ footer p {
   border-top-width: 0px;
   height: 70px;
   width: 3%;
-  overflow: scroll;
+  overflow: flex;
   margin-right: .5%;
 }
 
