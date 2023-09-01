@@ -7,7 +7,7 @@ export const Transactions = ({ transactions }) => {
     // turn unix timestamp into a date
     // Todo: format date further to include hours, minutes, and seconds
     const date = new Date(tx.time * 1000);
-    const formattedDate = date.toLocaleDateString("en-US");
+    const formattedDate = date.toLocaleDateString("en-US").replace(/\//g, '-');
     // ToDo: Handle pending payments since we are currently ignoring them and not displaying them on our past transactions list
     if (tx.pending) return null;
 
@@ -15,7 +15,7 @@ export const Transactions = ({ transactions }) => {
       return (
         <div key={tx.checking_id} className="tx-item">
           <p>Received from {tx.bolt11.substring(0, 25)}...</p>
-          <p>+{tx.amount / 1000} sats</p>
+          <p>+{tx.amount / 1000} satoshis</p>
           <p className="transaction-date">{formattedDate}</p>
         </div>
       );
@@ -25,7 +25,7 @@ export const Transactions = ({ transactions }) => {
       return (
         <div id={tx.checking_id} key={tx.checking_id} className="tx-item">
           <p>Sent with {tx.bolt11.substring(0, 25)}...</p>
-          <p className="tx-amount">{tx.amount / 1000} sats</p>
+          <p className="tx-amount">{tx.amount / 1000} satoshis</p>
           <p className="transaction-date">{formattedDate}</p>
         </div>
       );

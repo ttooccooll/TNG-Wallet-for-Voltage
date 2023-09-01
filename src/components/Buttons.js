@@ -22,6 +22,7 @@ export const Buttons = () => {
         >
           Send
         </button>
+
         <button
           className="button"
           onClick={() =>
@@ -33,6 +34,16 @@ export const Buttons = () => {
         >
           Receive
         </button>
+
+        <a
+          className="a"
+          href="https://bitcoin.clarkmoody.com/dashboard/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Status
+        </a>
+
       </div>
       <PaymentsModal modalState={modalState} setModalState={setModalState} />
     </div>

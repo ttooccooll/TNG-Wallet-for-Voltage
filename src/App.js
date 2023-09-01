@@ -94,33 +94,141 @@ function App() {
     getPrice();
     getWalletBalance();
     getTransactions();
-  }, []);
+  }, [getPrice]);
 
-  // Run these functions every 5 seconds after initial page load
   useEffect(() => {
-    // setInterval will run whatever is in the callback function every 5 seconds
+    // setInterval will run whatever is in the callback function every friggin second!
     const interval = setInterval(() => {
       getPrice();
       getWalletBalance();
       getTransactions();
-    }, 5000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="App">
-      <header>
-        <h1>Pleb Wallet: The Next Generation</h1>
+      <header >
+        <h1 > BTC-1701-D --- SC-21000000 --- H-2016 --- Capt. S-Nakamoto --- G-01-03-2009</h1>
       </header>
-      <Buttons />
+      <div className="row">
+        <div className="button-holder">
+          <Buttons />
+        </div>
+        <div className="button-next">
+        </div>
+        <div className="button-nextest">
+        </div>
+        <div className="button-nextestly">
+        </div>
+        <div className="button-nextiest">
+          <p>
+            <a 
+            className="p"
+            href="https://mempool.space/"
+            target="_blank"
+            rel="noopener noreferrer">
+              MEM.SPC
+            </a>
+            <a 
+            className="p"
+            href="https://www.pleblab.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+              P.Lab
+            </a>
+            <a 
+            className="p"
+            href="https://www.st-minutiae.com/resources/rulesofacquisition.html"
+            target="_blank"
+            rel="noopener noreferrer">
+              R0A
+            </a>
+            <a 
+            className="p"
+            href="https://bitfeed.live/"
+            target="_blank"
+            rel="noopener noreferrer">
+              BIT.LIV
+            </a>
+            <a 
+            className="p"
+            href="https://bitcoin.org/bitcoin.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="element"non-breaking-word>
+              BTC-W.P
+            </a>
+            <a 
+            className="p"
+            href="https://bitcoinexplorer.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="element"non-breaking-word>
+              BTC-EXP
+            </a>
+            <a 
+            className="p"
+            href="https://lnvisualizer.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+              LN-VIS
+            </a>
+            <a 
+            className="p"
+            href="https://www.youtube.com/watch?v=sZt6eU5REN8"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="#D45F10">
+              12-25-2364
+            </a>
+            <a 
+            className="p"
+            href="https://amboss.space/"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="#D45F10">
+              AMB.SPC
+            </a>
+            <a 
+            className="p"
+            href="https://nakamotoinstitute.org/cypherpunk-manifesto/"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="#D45F10">
+              03-09-1993
+            </a>
+            <a 
+            className="p"
+            href="https://www.federalreserve.gov/cbdc-faqs.htm"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="#D45F10">
+              FED-CBDC
+            </a>
+            <a 
+            className="p"
+            href="https://1ml.com/statistics"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="#D45F10">
+              LN.1ML
+            </a>
+          </p>
+        </div>
+      </div>
       <div className="row">
         <div className="balance-card">
-          <h2>Balance</h2>
-          <p>{balance} sats</p>
+          <div className="balance-content">
+            <h2>Balance</h2>
+            <p>{balance} satoshis</p>
+          </div>
         </div>
         <div className="balance-card">
-          <h2>Price</h2>
-          <p>${price}</p>
+          <div className="balance-content">
+              <h2>USD-BTC</h2>
+              <p>${price}</p>
+          </div>
         </div>
       </div>
       <div className="row">
@@ -132,7 +240,7 @@ function App() {
         </div>
       </div>
       <footer>
-        <p>NCC-1701-D</p>
+        <p>security-status: SHA-256</p>
       </footer>
     </div>
   );

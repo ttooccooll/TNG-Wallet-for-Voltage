@@ -3,9 +3,8 @@ label {
 }
 
 .buttons {
-  width: 50%;
-  margin: 0 auto;
-  margin-top: 3%;
+  width: 100%;
+  margin: 3%;
   display: flex;
   justify-content: space-around;
 }
@@ -19,9 +18,33 @@ label {
   font-family: 'MyFont';
   font-weight: bold;
   width: 120px;
+  margin: 5px;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: hand;
+}
+
+.a {
+  background-color: #0946EE;
+  border: 0px solid #3787FE;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.2rem;
+  font-family: 'MyFont';
+  font-weight: bold;
+  width: 120px;
+  margin: 5px;
+  color: inherit;
+  text-decoration: inherit;
+  cursor: hand;
 }
 
 .buttons button:hover {
+  cursor: hand;
+  opacity: 0.6;
+}
+
+.buttons a:hover {
   cursor: hand;
   opacity: 0.6;
 }
