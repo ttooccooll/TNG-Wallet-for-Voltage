@@ -1,0 +1,18 @@
+.video-container {
+    justify-content: center;
+    width: 50px; /* Set the width to 100 pixels */
+    height: 50px; /* Set the height to 100 pixels */
+    overflow: hidden;
+    position: relative;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }

@@ -24,33 +24,75 @@ h1 {
   text-align: center;
   color: #3787FE;
   font-size: x-large;
-}
-
-img {
-  max-width: 99px;
-  max-height: 99px;
-  border: solid 1px aqua;
-  border-radius: 20px;
-  align-items: center;
-  justify-content: center;
-  margin: 5px;
-  margin-right: 100px;
+  overflow: hidden;
 }
 
 footer {
   border-bottom: 25px solid #CE9712;
+  border-left: 95px solid #CE9712;
+  border-radius: 25px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   padding: 1%;
   text-align: center;
   position: fixed;
   bottom: 10;
   left: 0;
   right: 0;
-  margin-top: 0%;
+  margin-top: 2px;
+  margin-bottom: 1%;
+  position: relative;
+  z-index: 1;
+  margin-left: 2%;
+  margin-right: 3%;
+}
+
+.yessir {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-top: 25px solid #CE9712;
+  border-left: 95px solid #CE9712;
+  border-radius: 25px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  padding: 1%;
+  text-align: center;
+  position: fixed;
+  bottom: 10;
+  left: 0;
+  right: 0;
+  margin-top: 2px;
   margin-bottom: 3%;
   position: relative;
   z-index: 1;
-  margin-left: 3%;
+  margin-left: 2%;
   margin-right: 3%;
+  color: #3787FE;
+}
+
+.prefooter {
+  border-left: 95px solid #3787FE;
+  height: 10px;
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-top: 2px;
+}
+
+.moreprefooter {
+  border-left: 95px solid #D45F10;
+  height: 5px;
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-top: 2px;
+}
+
+.mostprefooter {
+  border-left: 95px solid #0946EE;
+  height: 20px;
+  margin-left: 2%;
+  margin-right: 3%;
+  margin-top: .5%;
 }
 
 .footer::before {
@@ -84,10 +126,10 @@ footer p {
   border-right-width: 0px;
   border-top-width: 0px;
   height: 70px;
-  width: 40%;
+  width: 45%;
   overflow: flex;
   margin-left: 2%;
-  margin-right: .5%;
+  margin-right: 2px;
   flex: content;
   justify-content: space-between;
 }
@@ -102,7 +144,7 @@ footer p {
   height: 70px;
   width: 10%;
   overflow: flex;
-  margin-right: .5%;
+  margin-right: 2px;
 }
 
 .button-nextest {
@@ -113,9 +155,9 @@ footer p {
   border-right-width: 0px;
   border-top-width: 0px;
   height: 70px;
-  width: 10%;
+  width: 8%;
   overflow: flex;
-  margin-right: .5%;
+  margin-right: 2px;
 }
 
 .button-nextestly {
@@ -126,9 +168,9 @@ footer p {
   border-right-width: 0px;
   border-top-width: 0px;
   height: 70px;
-  width: 3%;
+  width: 1%;
   overflow: flex;
-  margin-right: .5%;
+  margin-right: 2px;
 }
 
 .button-nextiest {
@@ -192,6 +234,7 @@ footer p {
   content: ""; /* Empty content, required for pseudo-elements */
   background-color: #000000; /* Set your desired text background color */
   position: absolute;
+  height: 100%;
   top: 0;
   left: 0;
   right: 0;
@@ -206,7 +249,7 @@ footer p {
   font-family: 'MyFont';
   background-color: black;
   color: rgb(139, 139, 139);
-  height: 50%;
+  height: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
   padding: 1%;

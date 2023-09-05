@@ -4,6 +4,8 @@ import Buttons from "./components/Buttons";
 import Transactions from "./components/Transactions";
 import axios from "axios";
 import "./App.css";
+import VideoPlayer from './components/VideoPlayer';
+import AudioPlayerComponent from './components/AudioPlayer';
 
 function App() {
   // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
@@ -97,20 +99,23 @@ function App() {
   }, [getPrice]);
 
   useEffect(() => {
-    // setInterval will run whatever is in the callback function every friggin second!
+    // setInterval will run whatever is in the callback function every two seconds
     const interval = setInterval(() => {
       getPrice();
       getWalletBalance();
       getTransactions();
-    }, 1000);
+    }, 2000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="App">
       <header >
-        <h1 > BTC-1701-D --- SC-21000000 --- H-2016 --- Capt. S-Nakamoto --- G-01-03-2009</h1>
+        <h1 > BTC-1701-D --- SC-21000000 --- H-2016 --- Capt. Nakamoto-S --- GB-01-03-2009</h1>
       </header>
+      <div>
+       <AudioPlayerComponent autoplay={true} />
+      </div>
       <div className="row">
         <div className="button-holder">
           <Buttons />
@@ -157,7 +162,14 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
             class="element"non-breaking-word>
-              BTC-W.P
+              08-31-08
+            </a>
+            <a 
+            className="p"
+            href="https://lnvisualizer.com/"
+            target="_blank"
+            rel="noopener noreferrer">
+              LN-VIS
             </a>
             <a 
             className="p"
@@ -169,13 +181,6 @@ function App() {
             </a>
             <a 
             className="p"
-            href="https://lnvisualizer.com/"
-            target="_blank"
-            rel="noopener noreferrer">
-              LN-VIS
-            </a>
-            <a 
-            className="p"
             href="https://www.youtube.com/watch?v=sZt6eU5REN8"
             target="_blank"
             rel="noopener noreferrer"
@@ -184,11 +189,11 @@ function App() {
             </a>
             <a 
             className="p"
-            href="https://amboss.space/"
+            href="FAQ.html"
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
-              AMB.SPC
+              FAQ4U
             </a>
             <a 
             className="p"
@@ -196,7 +201,7 @@ function App() {
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
-              03-09-1993
+              03-09-93
             </a>
             <a 
             className="p"
@@ -239,9 +244,26 @@ function App() {
           <Chart chartData={chartData} />
         </div>
       </div>
+      <div className="mostprefooter">
+      </div>
+      <div className="moreprefooter">
+      </div>
+      <div className="prefooter">
+      </div>
       <footer>
-        <p>security-status: SHA-256</p>
+        <p>security-status : : SHA-256</p>
       </footer>
+      <div className="yessir">
+        <div className="video-container" autoplay="true" >
+          <VideoPlayer />
+        </div>
+        <p> - click for sound - click for - </p>
+        <a className="p"
+            href="FAQ.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            color="#D45F10"> FAQ </a>
+      </div>
     </div>
   );
 }

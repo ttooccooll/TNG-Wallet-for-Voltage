@@ -4,9 +4,21 @@
 }
 
 .chart-container {
-  padding-left: 1%;
   font-family: 'MyFont';
   background-color: #000000;
-  font-style: color #a43b81;
   cursor: crosshair;
+  margin-left: 3%;
+}
+
+/* Change color of x-axis labels (Time) */
+.tick text {
+  fill: rgb(239, 231, 203); /* Set your desired text color here */
+  font-size: xx-small;
+}
+
+.tooltip-custom {
+  background-color: #000000; /* Set your desired background color here */
+  color: #ffffff; /* Set the text color for better readability */
+  border: 1px solid #000000; /* Optionally, add a border */
+  padding: 8px; /* Adjust padding as needed for spacing */
 }

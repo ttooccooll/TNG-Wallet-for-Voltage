@@ -2,15 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import axios from "axios";
 import "./PaymentsModal.css";
-
-const customStyles = {
-  content: {
-    top: "20%",
-    left: "40%",
-    right: "40%",
-    bottom: "auto",
-  },
-};
+import QRCode from 'qrcode.react';
 
 const PaymentsModal = ({ modalState, setModalState }) => {
   // Our state for the info we will send to either generate a new invoice or pay an invoice
@@ -91,7 +83,15 @@ const PaymentsModal = ({ modalState, setModalState }) => {
   return (
     <Modal
       isOpen={modalState.open}
-      style={customStyles}
+      style={{
+        content: {
+          top: "20%",
+          left: "40%",
+          right: "40%",
+          bottom: "auto",
+          backgroundColor: "black", // Add this line
+        },
+      }}
       contentLabel="Example Modal"
       appElement={document.getElementById("root")}
     >
@@ -140,8 +140,10 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       {invoice && (
         <section>
           <h3>Invoice created</h3>
+          <div className="qr-code-container">
+            <QRCode value={invoice} size={128} fgColor="#000" bgColor="#fff" />
+          </div>
           <p>{invoice}</p>
-          {/* ToDo: Create a QR code out of this invoice as well */}
         </section>
       )}
       {/* If we are displaying the status of our successful payment */}

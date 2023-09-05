@@ -23,15 +23,24 @@ const Chart = ({ chartData }) => {
           xLabel="Time"
           height={300}
           //  ToDo: Customize width to be responsive based on screen size
-          width={550}
+          width={500}
           data={data}
           onPointHover={(obj) => `price: $${obj.y}<br />time: ${obj.x}`}
           ticks={4}
           hideYLabel={true}
           hideXLabel={true}
-          xDisplay={(timestamp) =>
-            new Date(timestamp).toLocaleTimeString("en-US")
-          }
+          xDisplay={(timestamp) => {
+            const options = {
+              hour12: false, // Use 24-hour format
+              hour: "2-digit",
+              minute: "2-digit",
+              second: "2-digit",
+            };
+            return new Date(timestamp).toLocaleTimeString("en-US", options);
+          }}
+          pointRadius={2}
+          pointRadiusWithGlow={true}
+          interpolate="linear"
         />
       )}
     </div>

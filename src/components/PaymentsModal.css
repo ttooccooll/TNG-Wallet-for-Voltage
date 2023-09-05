@@ -9,28 +9,48 @@ form {
   flex-direction: column;
   text-align: center;
   font-family: 'MyFont';
+  background-color: black;
+  color: white;
 }
 
 form {
   width: 100%;
+  background-color: black;
 }
 
 form .button {
   margin: 10% auto;
+  color: black;
 }
 
 section h3 {
   text-align: center;
   font-family: 'MyFont';
+  background-color: black;
+  color: white;
 }
 
 section p {
   word-wrap: break-word;
   font-family: 'MyFont';
+  font-size: 7px;
+  background-color: black;
+  color: white;
+  margin: 10px;
 }
 
 .close-button {
   cursor: crosshair;
   text-align: end;
   font-family: 'MyFont';
+  background-color: black;
+  color: white;
+}
+
+.qr-code-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
 }

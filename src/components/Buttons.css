@@ -37,6 +37,8 @@ label {
   color: inherit;
   text-decoration: inherit;
   cursor: hand;
+  display: flex;
+  justify-content: space-around;
 }
 
 .buttons button:hover {
