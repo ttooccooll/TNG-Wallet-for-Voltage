@@ -189,11 +189,11 @@ function App() {
             </a>
             <a 
             className="p"
-            href="FAQ.html"
+            href={`${process.env.PUBLIC_URL}/TNGFAQ.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
-              FAQ4U
+              FAQ
             </a>
             <a 
             className="p"
@@ -259,10 +259,16 @@ function App() {
         </div>
         <p> - click for sound - click for - </p>
         <a className="p"
-            href="FAQ.html"
+            href={`${process.env.PUBLIC_URL}/TNGFAQ.pdf`}
             target="_blank"
             rel="noopener noreferrer"
-            color="#D45F10"> FAQ </a>
+            color="#D45F10"
+            style={{
+              color: '#D45F10',     // Set the color
+              textDecoration: 'none' // Remove underlining
+            }}
+        >  FAQ
+        </a>
       </div>
     </div>
   );
