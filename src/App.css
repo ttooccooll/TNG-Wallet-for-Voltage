@@ -57,6 +57,7 @@ footer {
   border-bottom-left-radius: 0px;
   border-top-right-radius: 0px;
   padding: 1%;
+  padding-top: 100%;
   text-align: center;
   position: fixed;
   bottom: 10;
