@@ -6,6 +6,7 @@ import axios from "axios";
 import "./App.css";
 import VideoPlayer from './components/VideoPlayer';
 import AudioPlayerComponent from './components/AudioPlayer';
+import BitcoinBlockHeight from './components/BlockHeight';
 
 function App() {
   // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
@@ -251,7 +252,7 @@ function App() {
       <div className="prefooter">
       </div>
       <footer>
-        <p>security-status : : SHA-256</p>
+        <p>security-status - SHA-256</p><p><BitcoinBlockHeight /></p>
       </footer>
       <div className="yessir">
         <div className="video-container" autoplay="true" >
