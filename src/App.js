@@ -242,7 +242,7 @@ function App() {
         <div className="row-item">
           <Transactions transactions={transactions} />
         </div>
-        <div className="row-item">
+        <div className="row-itemz">
           <Chart chartData={chartData} />
         </div>
       </div>
