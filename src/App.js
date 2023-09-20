@@ -24,7 +24,7 @@ function App() {
       .get("https://api.coinbase.com/v2/prices/BTC-USD/spot")
       // .then is a promise that will run when the API call is successful
       .then((res) => {
-        const formattedPrice = Number(res.data.data.amount).toFixed(2)
+        const formattedPrice = Number(res.data.data.amount).toFixed(10)
         setPrice(formattedPrice);
         updateChartData(formattedPrice);
       })
@@ -101,7 +101,7 @@ function App() {
   }, [getPrice]);
 
   useEffect(() => {
-    // setInterval will run whatever is in the callback function every two seconds
+    // setInterval will run whatever is in the callback function every other second
     const interval = setInterval(() => {
       getPrice();
       getWalletBalance();
@@ -234,7 +234,7 @@ function App() {
         <div className="balance-card">
           <div className="balance-content">
               <h2>USD-BTC</h2>
-              <p>${price}</p>
+              <p>{price}</p>
           </div>
         </div>
       </div>
@@ -259,15 +259,16 @@ function App() {
         <div className="video-container" autoplay="true" >
           <VideoPlayer />
         </div>
-        <p> - click for sound - click for - </p>
+        <p> - click for sound - - - - click for - </p>
         <a className="p"
             href={`${process.env.PUBLIC_URL}/TNGFAQ.pdf`}
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10"
             style={{
-              color: '#D45F10',     // Set the color
-              textDecoration: 'none' // Remove underlining
+              color: '#D45F10',
+              textDecoration: 'none',
+              cursor: 'auto'
             }}
         >  FAQ
         </a>

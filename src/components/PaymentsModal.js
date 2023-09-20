@@ -106,7 +106,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       {/* If it is a send */}
       {modalState.type === "send" && (
         <form>
-          <label>paste an invoice</label>
+          <label>paste invoice coordinates</label>
           <input
             type="text"
             value={formData.invoiceToPay}

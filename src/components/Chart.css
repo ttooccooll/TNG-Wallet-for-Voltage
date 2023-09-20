@@ -1,24 +1,22 @@
 @font-face {
   font-family: 'MyFont';
   src: url('Sterilict-L3aen.ttf') format('truetype');
+  background-color: black;
 }
 
 .chart-container {
   font-family: 'MyFont';
   background-color: #000000;
   cursor: crosshair;
-  margin-left: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  box-shadow: rgba(118, 185, 126, 0.17) 8px -23px 20px 8px inset, rgba(136, 145, 101, 0.15) 10px 36px 60px 10px inset, rgba(84, 182, 130, 0.1) 10px -79px 120px 100px inset, rgba(27, 118, 104, 0.06) 0px 4px 1px, rgba(194, 31, 31, 0.09) 0px 4px 2px, rgba(127, 84, 84, 0.09) 0px 8px 4px, rgba(60, 110, 129, 0.09) 10px 132px 18px, rgba(104, 47, 32, 0.09) 10px 132px 116px;
+  overflow: hidden;
 }
 
 /* Change color of x-axis labels (Time) */
 .tick text {
   fill: rgb(239, 231, 203); /* Set your desired text color here */
   font-size: xx-small;
-}
-
-.tooltip-custom {
-  background-color: #000000; /* Set your desired background color here */
-  color: #ffffff; /* Set the text color for better readability */
-  border: 1px solid #000000; /* Optionally, add a border */
-  padding: 8px; /* Adjust padding as needed for spacing */
+  background-color: black;
 }

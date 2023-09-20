@@ -36,18 +36,18 @@ label {
   margin: 5px;
   color: inherit;
   text-decoration: inherit;
-  cursor: hand;
+  cursor: default;
   display: flex;
   justify-content: space-around;
 }
 
 .buttons button:hover {
-  cursor: hand;
+  cursor: default;
   opacity: 0.6;
 }
 
 .buttons a:hover {
-  cursor: hand;
+  cursor: default;
   opacity: 0.6;
 }
 

@@ -40,6 +40,7 @@ const Chart = ({ chartData }) => {
           }}
           pointRadius={2}
           pointRadiusWithGlow={true}
+          strokeWidth={.5}
           interpolate="linear"
         />
       )}
