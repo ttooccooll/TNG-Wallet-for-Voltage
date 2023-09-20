@@ -11,21 +11,32 @@ body {
 header {
   border-top: 25px solid #CE9712;
   border-left: 55px solid #CE9712;
-  border-radius: 25px;
+  border-top-left-radius: 25px;
   border-top-right-radius: 0px;
   border-bottom-left-radius: 0px;
   margin-left: 2%;
   margin-right: 3%;
   margin-top: 2%;
   overflow: hidden;
+  position: relative;
+  height: 50px;
+  z-index: 1;
 }
 
 h1 {
   text-align: center;
   color: #3787FE;
   font-size: x-large;
-  overflow: hidden;
+  border-width: 15px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 15px;
+  margin-top: -5px;
+  margin-left: -5px;
+  z-index: 2;
+  position: relative;
 }
+
 
 footer {
   border-bottom: 25px solid #CE9712;
@@ -238,6 +249,7 @@ footer p {
 .balance-card::before {
   content: ""; /* Empty content, required for pseudo-elements */
   background-color: #000000; /* Set your desired text background color */
+  border-color: #000000;
   position: absolute;
   height: 100%;
   top: 0;
@@ -253,11 +265,11 @@ footer p {
   font-weight: lighter;
   font-family: 'MyFont';
   background-color: black;
+  border-color: #000000;
   color: rgb(139, 139, 139);
   height: 100%;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding: 1%;
   padding-top: 4%;
   padding-bottom: 4%;
   margin-left: 3%;
