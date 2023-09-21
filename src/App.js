@@ -8,6 +8,9 @@ import VideoPlayer from './components/VideoPlayer';
 import AudioPlayerComponent from './components/AudioPlayer';
 import BitcoinBlockHeight from './components/BlockHeight';
 import TotalBTC from './components/TotalBitcoin'
+import BitcoinDifficulty from './components/Difficulty'
+import PdfModal from './components/PdfModal';
+import BitcoinBlockReward from './components/BlockReward';
 
 function App() {
   // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
@@ -25,7 +28,7 @@ function App() {
       .get("https://api.coinbase.com/v2/prices/BTC-USD/spot")
       // .then is a promise that will run when the API call is successful
       .then((res) => {
-        const formattedPrice = Number(res.data.data.amount).toFixed(10)
+        const formattedPrice = Number(res.data.data.amount).toFixed(5)
         setPrice(formattedPrice);
         updateChartData(formattedPrice);
       })
@@ -114,7 +117,7 @@ function App() {
   return (
     <div className="App">
       <header >
-        <h1 > BTC-1701-D  ---  Capt. Nakamoto.S --- UFSP </h1>
+        <h1 > BTC-1701-D  - - -  Capt. Nakamoto.S - - - UFSP </h1>
       </header>
       <div>
        <AudioPlayerComponent autoplay={true} />
@@ -190,14 +193,7 @@ function App() {
             color="#D45F10">
               12-25-2364
             </a>
-            <a 
-            className="p"
-            href={`${process.env.PUBLIC_URL}/TNGFAQ.pdf`}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="#D45F10">
-              FAQ
-            </a>
+            <PdfModal />
             <a 
             className="p"
             href="https://nakamotoinstitute.org/cypherpunk-manifesto/"
@@ -284,27 +280,17 @@ function App() {
         </div>
       </div>
       <footer>
-        <p><TotalBTC /></p>
         <p><BitcoinBlockHeight /></p>
-        <p>security-status - SHA-256</p>
+        <p><BitcoinBlockReward /></p>
+        <p><TotalBTC /></p>
+        <p>security-status - <BitcoinDifficulty /></p>
       </footer>
       <div className="yessir">
         <div className="video-container" autoplay="true" >
           <VideoPlayer />
         </div>
         <p> - click for sound - - - - click for - </p>
-        <a className="p"
-            href={`${process.env.PUBLIC_URL}/TNGFAQ.pdf`}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="#D45F10"
-            style={{
-              color: '#D45F10',
-              textDecoration: 'none',
-              cursor: 'auto'
-            }}
-        >  FAQ
-        </a>
+        <PdfModal />
       </div>
     </div>
   );

@@ -10,7 +10,6 @@ function BitcoinBlockHeight() {
       axios
         .get('https://blockchain.info/q/getblockcount')
         .then((res) => {
-          // Corrected: Access the block height from `res.data`
           setBlockHeight(res.data);
         })
         .catch((err) => {
@@ -20,7 +19,6 @@ function BitcoinBlockHeight() {
 
     getBlockHeight();
 
-    // Fetch block height periodically (every minute, for example)
     const intervalId = setInterval(getBlockHeight, 60000);
 
     return () => clearInterval(intervalId);

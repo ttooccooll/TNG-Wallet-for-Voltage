@@ -29,7 +29,7 @@ function TotalBitcoin() {
 
   return (
     <div>
-      <p className="total-btc">TB -- {totalBTC} - 21000000</p>
+      <p className="total-btc">TBC - {totalBTC}</p>
     </div>
   );
 }
