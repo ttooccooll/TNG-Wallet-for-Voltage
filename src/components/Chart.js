@@ -6,7 +6,7 @@ import "./Chart.css";
 const Chart = ({ chartData }) => {
   if (!chartData && !chartData?.length) return null;
 
-  const maxDataPoints = 150;
+  const maxDataPoints = 175;
   const slicedChartData = chartData.slice(-maxDataPoints);
 
   const data = [

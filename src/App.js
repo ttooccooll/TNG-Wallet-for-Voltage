@@ -249,37 +249,37 @@ function App() {
       </div>
       <div className="mostprefooter">
         <div class="content-container">
-          <ul>
-              {chartData &&
-                chartData.map((dataPoint, index) => (
-                  <li key={index}>
-                    Stardate {new Date(dataPoint.x).toLocaleString()}, USD-BTC: {dataPoint.y}
-                  </li>
-                ))}
+         <ul>
+          {chartData &&
+            chartData.map((dataPoint, index) => (
+              <li key={index}>
+                Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false })}, USD-BTC: {dataPoint.y}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
       <div className="moreprefooter">
         <div class="content-container">
             <ul>
-                {chartData &&
-                  chartData.map((dataPoint, index) => (
-                    <li key={index}>
-                      Stardate {new Date(dataPoint.x).toLocaleString()}, USD-BTC: {dataPoint.y}
-                    </li>
-                  ))}
+              {chartData &&
+                chartData.map((dataPoint, index) => (
+                  <li key={index}>
+                    Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false })}, USD-BTC: {dataPoint.y}
+                  </li>
+               ))}
             </ul>
           </div>
         </div>
       <div className="prefooter">
         <div class="content-container">
           <ul>
-              {chartData &&
-                chartData.map((dataPoint, index) => (
-                  <li key={index}>
-                    Stardate {new Date(dataPoint.x).toLocaleString()}, USD-BTC: {dataPoint.y}
-                  </li>
-                ))}
+            {chartData &&
+              chartData.map((dataPoint, index) => (
+                <li key={index}>
+                  Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false })}, USD-BTC: {dataPoint.y}
+                </li>
+              ))}
           </ul>
         </div>
       </div>
