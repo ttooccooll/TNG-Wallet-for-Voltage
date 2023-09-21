@@ -7,6 +7,7 @@ import "./App.css";
 import VideoPlayer from './components/VideoPlayer';
 import AudioPlayerComponent from './components/AudioPlayer';
 import BitcoinBlockHeight from './components/BlockHeight';
+import TotalBTC from './components/TotalBitcoin'
 
 function App() {
   // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
@@ -101,19 +102,19 @@ function App() {
   }, [getPrice]);
 
   useEffect(() => {
-    // setInterval will run whatever is in the callback function every other second
+    // setInterval will run whatever is in the callback function every damn second
     const interval = setInterval(() => {
       getPrice();
       getWalletBalance();
       getTransactions();
-    }, 2000);
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="App">
       <header >
-        <h1 > BTC-1701-D --- SC-21000000 --- H-2016 --- Capt. Nakamoto-S --- GB-01-03-2009</h1>
+        <h1 > BTC-1701-D  ---  Capt. Nakamoto.S --- UFSP </h1>
       </header>
       <div>
        <AudioPlayerComponent autoplay={true} />
@@ -247,13 +248,45 @@ function App() {
         </div>
       </div>
       <div className="mostprefooter">
+        <div class="content-container">
+          <ul>
+              {chartData &&
+                chartData.map((dataPoint, index) => (
+                  <li key={index}>
+                    Stardate {new Date(dataPoint.x).toLocaleString()}, USD-BTC: {dataPoint.y}
+                  </li>
+                ))}
+          </ul>
+        </div>
       </div>
       <div className="moreprefooter">
-      </div>
+        <div class="content-container">
+            <ul>
+                {chartData &&
+                  chartData.map((dataPoint, index) => (
+                    <li key={index}>
+                      Stardate {new Date(dataPoint.x).toLocaleString()}, USD-BTC: {dataPoint.y}
+                    </li>
+                  ))}
+            </ul>
+          </div>
+        </div>
       <div className="prefooter">
+        <div class="content-container">
+          <ul>
+              {chartData &&
+                chartData.map((dataPoint, index) => (
+                  <li key={index}>
+                    Stardate {new Date(dataPoint.x).toLocaleString()}, USD-BTC: {dataPoint.y}
+                  </li>
+                ))}
+          </ul>
+        </div>
       </div>
       <footer>
-        <p>security-status - SHA-256</p><p><BitcoinBlockHeight /></p>
+        <p><TotalBTC /></p>
+        <p><BitcoinBlockHeight /></p>
+        <p>security-status - SHA-256</p>
       </footer>
       <div className="yessir">
         <div className="video-container" autoplay="true" >

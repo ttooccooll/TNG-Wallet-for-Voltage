@@ -6,10 +6,13 @@ import "./Chart.css";
 const Chart = ({ chartData }) => {
   if (!chartData && !chartData?.length) return null;
 
+  const maxDataPoints = 150;
+  const slicedChartData = chartData.slice(-maxDataPoints);
+
   const data = [
     {
       color: "steelblue",
-      points: chartData,
+      points: slicedChartData,
     },
   ];
 
@@ -25,7 +28,6 @@ const Chart = ({ chartData }) => {
           //  ToDo: Customize width to be responsive based on screen size
           width={500}
           data={data}
-          onPointHover={(obj) => `price: $${obj.y}<br />time: ${obj.x}`}
           ticks={4}
           hideYLabel={true}
           hideXLabel={true}

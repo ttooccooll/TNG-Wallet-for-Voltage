@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import "./FunFacts.css";
 
 function BitcoinBlockHeight() {
   const [blockHeight, setBlockHeight] = useState(null);
@@ -27,7 +28,7 @@ function BitcoinBlockHeight() {
 
   return (
     <div>
-      <p>CBBH - {blockHeight}</p>
+      <p className="total-btc">CBBH - {blockHeight}</p>
     </div>
   );
 }

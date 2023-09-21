@@ -7,7 +7,7 @@ export const Transactions = ({ transactions }) => {
     // turn unix timestamp into a date
     // Todo: format date further to include hours, minutes, and seconds
     const date = new Date(tx.time * 1000);
-    const formattedDate = date.toLocaleDateString("en-US").replace(/\//g, '-');
+    const formattedDate = date.toLocaleDateString("en-US").replace(/\//g, '.');
     // ToDo: Handle pending payments since we are currently ignoring them and not displaying them on our past transactions list
     if (tx.pending) return null;
 
