@@ -20,3 +20,10 @@
   font-size: xx-small;
   background-color: black;
 }
+
+.timestamp {
+  font-family: 'MyFont'; /* Apply your custom font */
+  color: rgb(239, 231, 203); /* Set your desired text color here */
+  font-size: xx-small;
+  background-color: black;
+}
