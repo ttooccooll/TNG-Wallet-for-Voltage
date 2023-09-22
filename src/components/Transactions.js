@@ -14,7 +14,7 @@ export const Transactions = ({ transactions }) => {
     if (tx.amount > 0) {
       return (
         <div key={tx.checking_id} className="tx-item">
-          <p>Received from {tx.bolt11.substring(0, 25)}...</p>
+          <p>Inbound - {tx.bolt11.substring(0, 25)}...</p>
           <p>+{tx.amount / 1000} satoshis</p>
           <p className="transaction-date">{formattedDate}</p>
         </div>
@@ -24,9 +24,9 @@ export const Transactions = ({ transactions }) => {
     if (tx.amount < 0) {
       return (
         <div id={tx.checking_id} key={tx.checking_id} className="tx-item">
-          <p>Sent with {tx.bolt11.substring(0, 25)}...</p>
+          <p>Outbound - {tx.bolt11.substring(0, 25)}...</p>
           <p className="tx-amount">{tx.amount / 1000} satoshis</p>
-          <p className="transaction-date">{formattedDate}</p>
+          <p className="transaction-date"> Stardate {formattedDate}</p>
         </div>
       );
     }

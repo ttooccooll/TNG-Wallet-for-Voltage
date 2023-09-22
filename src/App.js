@@ -10,6 +10,7 @@ import BitcoinBlockHeight from './components/BlockHeight';
 import TotalBTC from './components/TotalBitcoin'
 import BitcoinDifficulty from './components/Difficulty'
 import PdfModal from './components/PdfModal';
+import WhitePaper from './components/WhitePaper';
 import BitcoinBlockReward from './components/BlockReward';
 import BitcoinHashWin from './components/HashWin';
 
@@ -172,15 +173,7 @@ function App() {
             rel="noopener noreferrer">
               BIT.LIV
             </a>
-            <a 
-            className="p"
-            href="https://bitcoin.org/bitcoin.pdf"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="element"non-breaking-word>
-              08-31-08
-            </a>
+            <WhitePaper />
             <a 
             className="p"
             href="https://lnvisualizer.com/"

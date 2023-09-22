@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PdfModal.css';
 
-function PdfModal() {
+function WhitePaper() {
   const [modalOpen, setModalOpen] = useState(false);
 
   const playMP3 = () => {
@@ -43,7 +43,7 @@ function PdfModal() {
             e.target.style.opacity = '1'; // Restore opacity on mouse leave
           }}
       >
-        FAQ
+        8-31-08
       </span>
 
       {modalOpen && (
@@ -55,7 +55,7 @@ function PdfModal() {
             </span>
             <div className="modal-inner">
               <iframe
-                src={`${process.env.PUBLIC_URL}/TNGFAQ.jpg`}
+                src={`/bitcoin.pdf`}
                 title="FAQ PDF"
                 style={{ width: '612px', height: '792px' }}
               ></iframe>
@@ -67,4 +67,4 @@ function PdfModal() {
   );
 }
 
-export default PdfModal;
+export default WhitePaper;

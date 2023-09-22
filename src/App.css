@@ -116,7 +116,7 @@ footer p {
 
 /* Style for individual list items */
 .prefooter ul li {
-  margin-right: 10px; /* Add some spacing between list items if needed */
+  margin-right: 15px; /* Add some spacing between list items if needed */
   flex-shrink: 0; /* Prevent list items from shrinking */
   padding-top: 0;
 }
@@ -204,7 +204,7 @@ footer p {
 
 /* Style for individual list items */
 .moreprefooter ul li {
-  margin-right: 10px; /* Add some spacing between list items if needed */
+  margin-right: 15px; /* Add some spacing between list items if needed */
   flex-shrink: 0; /* Prevent list items from shrinking */
   padding-top: 0;
 }
@@ -242,7 +242,7 @@ footer p {
 
 /* Style for individual list items */
 .mostprefooter ul li {
-  margin-right: 10px; /* Add some spacing between list items if needed */
+  margin-right: 15px; /* Add some spacing between list items if needed */
   flex-shrink: 0; /* Prevent list items from shrinking */
 }
 
