@@ -8,8 +8,8 @@
   font-family: 'MyFont';
   background-color: #000000;
   cursor: crosshair;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
   overflow: hidden;
   box-shadow: rgba(0, 221, 255, 0.35) 0px -50px 536px -28px inset;
 }

@@ -34,7 +34,7 @@ function App() {
       .get("https://api.coinbase.com/v2/prices/BTC-USD/spot")
       // .then is a promise that will run when the API call is successful
       .then((res) => {
-        const formattedPrice = Number(res.data.data.amount).toFixed(5)
+        const formattedPrice = Number(res.data.data.amount).toFixed(4)
         setPrice(formattedPrice);
         updateChartData(formattedPrice);
       })
@@ -111,7 +111,7 @@ function App() {
   }, [getPrice]);
 
   useEffect(() => {
-    // setInterval will run whatever is in the callback function every damn second
+    // setInterval will run whatever is in the callback function every friggin second
     const interval = setInterval(() => {
       getPrice();
       getWalletBalance();
@@ -219,12 +219,12 @@ function App() {
             </a>
             <a 
             className="p"
-            href="https://www.federalreserve.gov/cbdc-faqs.htm"
+            href="https://www.youtube.com/watch?v=YRyioZK6BOc"
             onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
-              FED-CBDC
+              5.P0T
             </a>
             <a 
             className="p"
