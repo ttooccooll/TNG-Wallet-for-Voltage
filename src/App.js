@@ -235,7 +235,7 @@ function App() {
         <div className="balance-card">
           <div className="balance-content">
             <h2>Balance</h2>
-            <p>{balance} satoshis</p>
+            <p>{balance} sats</p>
           </div>
         </div>
         <div className="balance-card">
@@ -259,7 +259,7 @@ function App() {
           {chartData &&
             chartData.map((dataPoint, index) => (
               <li key={index}>
-                Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false })}, USD-BTC: {dataPoint.y}
+                {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
               </li>
             ))}
           </ul>
@@ -271,7 +271,7 @@ function App() {
               {chartData &&
                 chartData.map((dataPoint, index) => (
                   <li key={index}>
-                    Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false })}, USD-BTC: {dataPoint.y}
+                    Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
                   </li>
                ))}
             </ul>
@@ -283,7 +283,7 @@ function App() {
             {chartData &&
               chartData.map((dataPoint, index) => (
                 <li key={index}>
-                  Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false })}, USD-BTC: {dataPoint.y}
+                  Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
                 </li>
               ))}
           </ul>

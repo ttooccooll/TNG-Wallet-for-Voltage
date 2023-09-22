@@ -1,15 +1,17 @@
 .total-btc {
-    font-size: .8vh;
+    font-size: .9vh;
     padding: 1vh;
     color: black;
-    background-color: #3787FE;
+    background-color: aqua;
     border-width: 10vh;
     border-radius: 150vh;
-    border-color: #3787FE;
+    border-color: aqua;
     width: 10vw;
+    opacity: .8;
   }
   
   .total-btc:hover {
     cursor: default;
-    background-color: #0946EE
+    background-color: aqua;
+    opacity: 2;
   }

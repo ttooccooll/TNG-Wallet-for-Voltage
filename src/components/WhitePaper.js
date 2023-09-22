@@ -35,7 +35,7 @@ function WhitePaper() {
             openModal();
           }
         }}
-        style={{ color: '#D45F10', cursor: 'default', textDecoration: 'none' }}
+        style={{ color: 'aqua', cursor: 'default', textDecoration: 'none' }}
         onMouseEnter={(e) => {
             e.target.style.opacity = '0.6'; // Reduce opacity on hover
           }}
