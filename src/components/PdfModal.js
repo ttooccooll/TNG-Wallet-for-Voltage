@@ -4,6 +4,16 @@ import './PdfModal.css';
 function PdfModal() {
   const [modalOpen, setModalOpen] = useState(false);
 
+  const playMP3 = () => {
+    const audio = new Audio("/pleaserestateasinglequestion.mp3");
+    audio.play();
+  };
+
+  const playMP4 = () => {
+    const audio = new Audio("/computerbeep_69.mp3");
+    audio.play();
+  };
+
   const openModal = () => {
     setModalOpen(true);
   };
@@ -19,7 +29,7 @@ function PdfModal() {
         role="link"
         tabIndex={0}
         className="p"
-        onClick={openModal}
+        onClick={() => { openModal(); playMP3(); }}
         onKeyPress={(e) => {
           if (e.key === 'Enter') {
             openModal();
@@ -37,10 +47,10 @@ function PdfModal() {
       </span>
 
       {modalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
+        <div className="modal-overlay"onClick={() => { closeModal(); playMP4(); }}>
           {/* Prevent clicks within the modal from closing it */}
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={closeModal}>
+            <span className="close" onClick={() => { closeModal(); playMP4(); }}>
               &times;
             </span>
             <div className="modal-inner">

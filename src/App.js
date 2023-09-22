@@ -11,6 +11,7 @@ import TotalBTC from './components/TotalBitcoin'
 import BitcoinDifficulty from './components/Difficulty'
 import PdfModal from './components/PdfModal';
 import BitcoinBlockReward from './components/BlockReward';
+import BitcoinHashWin from './components/HashWin';
 
 function App() {
   // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
@@ -19,6 +20,11 @@ function App() {
   const [balance, setBalance] = useState(null);
   const [chartData, setChartData] = useState(null);
   const [transactions, setTransactions] = useState([]);
+
+  const playMP3 = () => {
+    const audio = new Audio("/tng_swoosh_clean.mp3");
+    audio.play();
+  };
 
   const getPrice = () => {
     // Axios is a library that makes it easy to make http requests
@@ -117,7 +123,7 @@ function App() {
   return (
     <div className="App">
       <header >
-        <h1 > BTC-1701-D  - - -  Capt. Nakamoto.S - - - UFSP </h1>
+        <h1 > United Federation of Sovereign Individuals </h1>
       </header>
       <div>
        <AudioPlayerComponent autoplay={true} />
@@ -137,6 +143,7 @@ function App() {
             <a 
             className="p"
             href="https://mempool.space/"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer">
               MEM.SPC
@@ -144,6 +151,7 @@ function App() {
             <a 
             className="p"
             href="https://www.pleblab.com/"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer">
               P.Lab
@@ -151,6 +159,7 @@ function App() {
             <a 
             className="p"
             href="https://www.st-minutiae.com/resources/rulesofacquisition.html"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer">
               R0A
@@ -158,6 +167,7 @@ function App() {
             <a 
             className="p"
             href="https://bitfeed.live/"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer">
               BIT.LIV
@@ -165,6 +175,7 @@ function App() {
             <a 
             className="p"
             href="https://bitcoin.org/bitcoin.pdf"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer"
             class="element"non-breaking-word>
@@ -173,6 +184,7 @@ function App() {
             <a 
             className="p"
             href="https://lnvisualizer.com/"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer">
               LN-VIS
@@ -180,6 +192,7 @@ function App() {
             <a 
             className="p"
             href="https://bitcoinexplorer.org/"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer"
             class="element"non-breaking-word>
@@ -188,6 +201,7 @@ function App() {
             <a 
             className="p"
             href="https://www.youtube.com/watch?v=sZt6eU5REN8"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
@@ -197,6 +211,7 @@ function App() {
             <a 
             className="p"
             href="https://nakamotoinstitute.org/cypherpunk-manifesto/"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
@@ -205,6 +220,7 @@ function App() {
             <a 
             className="p"
             href="https://www.federalreserve.gov/cbdc-faqs.htm"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
@@ -213,6 +229,7 @@ function App() {
             <a 
             className="p"
             href="https://1ml.com/statistics"
+            onClick={playMP3}
             target="_blank"
             rel="noopener noreferrer"
             color="#D45F10">
@@ -281,8 +298,9 @@ function App() {
       </div>
       <footer>
         <p><BitcoinBlockHeight /></p>
-        <p><BitcoinBlockReward /></p>
         <p><TotalBTC /></p>
+        <p><BitcoinBlockReward /></p>
+        <p><BitcoinHashWin /></p>
         <p>security-status - <BitcoinDifficulty /></p>
       </footer>
       <div className="yessir">

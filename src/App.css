@@ -59,13 +59,14 @@ footer p {
   color: #D45F10;
   padding: 0%;
   margin: 0%;
-  font-size: x-large;
+  font-size: large;
   font-weight: bold;
   font-family: 'MyFont';
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   margin-left: 5px;
+  text-align: center;
 }
 
 .yessir {
@@ -270,6 +271,8 @@ footer p {
   overflow: flex;
   margin-left: 2%;
   margin-right: 2px;
+  padding-left: 2px;
+  padding-right: 5px;
   flex: content;
   justify-content: space-between;
 }

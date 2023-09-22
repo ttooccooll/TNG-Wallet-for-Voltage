@@ -18,6 +18,16 @@ const PaymentsModal = ({ modalState, setModalState }) => {
     checkingId: "",
   });
 
+  const playMP3 = () => {
+    const audio = new Audio("/tng_warp7.mp3");
+    audio.play();
+  };
+
+  const playMP4 = () => {
+    const audio = new Audio("/computerbeep_69.mp3");
+    audio.play();
+  };
+
   const handleSend = (e) => {
     // Keep the page from refreshing when the form is submitted
     e.preventDefault();
@@ -97,16 +107,14 @@ const PaymentsModal = ({ modalState, setModalState }) => {
     >
       <p
         className="close-button"
-        onClick={() => {
-          clearForms();
-        }}
+        onClick={() => { clearForms(); playMP4(); }}
       >
         X
       </p>
       {/* If it is a send */}
       {modalState.type === "send" && (
         <form>
-          <label>paste invoice coordinates</label>
+          <label>invoice coordinates</label>
           <input
             type="text"
             value={formData.invoiceToPay}
@@ -114,7 +122,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
               setFormData({ ...formData, invoiceToPay: e.target.value })
             }
           />
-          <button className="button" onClick={(e) => handleSend(e)}>
+          <button className="button" onClick={(e) => { handleSend(e); playMP3(); }}>
             Engage
           </button>
         </form>
@@ -131,7 +139,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
               setFormData({ ...formData, amount: e.target.value })
             }
           />
-          <button className="button" onClick={(e) => handleReceive(e)}>
+          <button className="button" onClick={(e) => { handleReceive(e); playMP3(); }}>
             Engage
           </button>
         </form>

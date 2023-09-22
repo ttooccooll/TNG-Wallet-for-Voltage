@@ -1,12 +1,12 @@
 .total-btc {
-    font-size: 1.5vh;
+    font-size: .8vh;
     padding: 1vh;
     color: black;
     background-color: #3787FE;
     border-width: 10vh;
     border-radius: 150vh;
     border-color: #3787FE;
-    width: 150px;
+    width: 10vw;
   }
   
   .total-btc:hover {
