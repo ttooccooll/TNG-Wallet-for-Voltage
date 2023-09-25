@@ -28,7 +28,7 @@ const Chart = ({ chartData }) => {
           //  ToDo: Customize width to be responsive based on screen size
           width={500}
           data={data}
-          ticks={4}
+          ticks={6}
           hideYLabel={true}
           hideXLabel={true}
           xDisplay={(timestamp) => {
