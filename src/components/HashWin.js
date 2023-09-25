@@ -26,7 +26,7 @@ function BitcoinHashWin() {
 
   return (
     <div>
-      <p className="total-btc">HTW - {hashWin}</p>
+      <p className="total-btc">HW - {hashWin}</p>
     </div>
   );
 }

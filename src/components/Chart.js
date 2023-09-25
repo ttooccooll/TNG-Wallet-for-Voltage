@@ -6,7 +6,7 @@ import "./Chart.css";
 const Chart = ({ chartData }) => {
   if (!chartData && !chartData?.length) return null;
 
-  const maxDataPoints = 175;
+  const maxDataPoints = 500;
   const slicedChartData = chartData.slice(-maxDataPoints);
 
   const data = [
@@ -24,7 +24,7 @@ const Chart = ({ chartData }) => {
       ) : (
         <LineChart
           xLabel="Time"
-          height={300}
+          height={325}
           //  ToDo: Customize width to be responsive based on screen size
           width={500}
           data={data}
