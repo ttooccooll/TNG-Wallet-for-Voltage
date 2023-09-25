@@ -19,6 +19,7 @@
   fill: rgb(239, 231, 203); /* Set your desired text color here */
   font-size: xx-small;
   background-color: black;
+  font-family: 'MyFont';
 }
 
 .timestamp {
@@ -26,4 +27,5 @@
   color: rgb(239, 231, 203); /* Set your desired text color here */
   font-size: xx-small;
   background-color: black;
+  font-family: 'MyFont';
 }
