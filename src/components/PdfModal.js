@@ -4,22 +4,16 @@ import './PdfModal.css';
 function PdfModal() {
   const [modalOpen, setModalOpen] = useState(false);
 
-  const playMP3 = () => {
-    const audio = new Audio("/tng_drawer.mp3");
-    audio.play();
-  };
-
-  const playMP4 = () => {
-    const audio = new Audio("/computerbeep_69.mp3");
-    audio.play();
-  };
-
   const openModal = () => {
     setModalOpen(true);
+    const audioOpen = new Audio(`${process.env.PUBLIC_URL}/tng_drawer.mp3`);
+    audioOpen.play();
   };
 
   const closeModal = () => {
     setModalOpen(false);
+    const audioClose = new Audio(`${process.env.PUBLIC_URL}/computerbeep_69.mp3`);
+    audioClose.play();
   };
 
   return (
@@ -28,37 +22,42 @@ function PdfModal() {
       <span
         role="link"
         tabIndex={0}
-        className="p"
-        onClick={() => { openModal(); playMP3(); }}
+        onClick={() => openModal()}
         onKeyPress={(e) => {
           if (e.key === 'Enter') {
             openModal();
           }
         }}
-        style={{ color: 'aqua', cursor: 'default', textDecoration: 'none' }}
+        style={{
+          color: 'aqua',
+          cursor: 'default', // Change cursor to pointer on hover
+          textDecoration: 'none',
+          opacity: 1, // Set the initial opacity
+        }}
         onMouseEnter={(e) => {
-            e.target.style.opacity = '0.6'; // Reduce opacity on hover
-          }}
+          e.target.style.opacity = '0.6'; // Reduce opacity on hover
+        }}
         onMouseLeave={(e) => {
-            e.target.style.opacity = '1'; // Restore opacity on mouse leave
-          }}
+          e.target.style.opacity = '1'; // Restore opacity on mouse leave
+        }}
       >
         FAQ
       </span>
 
       {modalOpen && (
-        <div className="modal-overlay"onClick={() => { closeModal(); playMP4(); }}>
-          {/* Prevent clicks within the modal from closing it */}
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <span className="close" onClick={() => { closeModal(); playMP4(); }}>
+        <div className="modal-overlay" onClick={() => closeModal()}>
+          {/* Center the modal vertically and horizontally */}
+          <div className="modal-content-centered">
+            X
+            <span className="close" onClick={() => closeModal()}>
               &times;
             </span>
             <div className="modal-inner">
-              <iframe
+              <img
                 src={`${process.env.PUBLIC_URL}/TNGFAQ.jpg`}
-                title="FAQ PDF"
-                style={{ width: '612px', height: '792px' }}
-              ></iframe>
+                alt="FAQ"
+                className="full-height-image"
+              />
             </div>
           </div>
         </div>

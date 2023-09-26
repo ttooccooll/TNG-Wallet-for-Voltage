@@ -13,20 +13,20 @@ export const Transactions = ({ transactions }) => {
 
     if (tx.amount > 0) {
       return (
-        <div key={tx.checking_id} className="tx-item">
-          <p>Inbound - {tx.bolt11.substring(0, 25)}...</p>
-          <p>+{tx.amount / 1000} satoshis</p>
-          <p className="transaction-date">{formattedDate}</p>
+        <div key={tx.checking_id} className="t">
+          <p className="t">Inbound - {tx.bolt11.substring(0, 30)}</p>
+          <p className="t">+{tx.amount / 1000} satoshis</p>
+          <p className="t">{formattedDate}</p>
         </div>
       );
     }
 
     if (tx.amount < 0) {
       return (
-        <div id={tx.checking_id} key={tx.checking_id} className="tx-item">
-          <p>Outbound - {tx.bolt11.substring(0, 25)}...</p>
-          <p className="tx-amount">{tx.amount / 1000} satoshis</p>
-          <p className="transaction-date"> Stardate {formattedDate}</p>
+        <div id={tx.checking_id} key={tx.checking_id} className="t">
+          <p className="t">Outbound - {tx.bolt11.substring(0, 30)}</p>
+          <p className="t">{tx.amount / 1000} satoshis</p>
+          <p className="t"> Stardate {formattedDate}</p>
         </div>
       );
     }
@@ -34,7 +34,7 @@ export const Transactions = ({ transactions }) => {
 
   return (
     <div>
-      <h3>Transactions</h3>
+      <h4 className="tr">Transactions</h4>
       {transactions.map((transaction) => {
         return parseTx(transaction);
       })}

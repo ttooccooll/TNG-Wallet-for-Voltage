@@ -33,14 +33,14 @@ const PaymentsModal = ({ modalState, setModalState }) => {
     e.preventDefault();
 
     const headers = {
-      "X-Api-Key": "52cac212fc664da393ac45df991fdb84",
+      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
     };
     const data = {
       bolt11: formData.invoiceToPay,
       out: true,
     };
     axios
-      .post("https://legend.lnbits.com/api/v1/payments", data, { headers })
+      .post("http://bigbadpc.local:3007/api/v1/payments", data, { headers })
       .then((res) =>
         setPaymentInfo({
           paymentHash: res.data.payment_hash,
@@ -57,7 +57,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
     e.preventDefault();
 
     const headers = {
-      "X-Api-Key": "52cac212fc664da393ac45df991fdb84",
+      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
     };
     const data = {
       amount: formData.amount,
@@ -66,7 +66,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       memo: "LNBits",
     };
     axios
-      .post("https://legend.lnbits.com/api/v1/payments", data, { headers })
+      .post("http://bigbadpc.local:3007/api/v1/payments", data, { headers })
       .then((res) => setInvoice(res.data.payment_request))
       .catch((err) => console.log(err));
 
@@ -99,7 +99,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
           left: "40%",
           right: "40%",
           bottom: "auto",
-          backgroundColor: "black", // Add this line
+          backgroundColor: "black",
         },
       }}
       contentLabel="Example Modal"

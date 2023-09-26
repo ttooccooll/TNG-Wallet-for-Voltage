@@ -4,6 +4,7 @@
     height: 50px;
     overflow: hidden;
     position: relative;
+    background: black;
   }
 
   .video-container iframe {

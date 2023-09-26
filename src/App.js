@@ -48,10 +48,10 @@ function App() {
   const getWalletBalance = () => {
     // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
-      "X-Api-Key": "e9a0be9b5fd45538b002894ff7e28",
+      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
     };
     axios
-      .get("https://legend.lnbits.com/api/v1/wallet", { headers })
+      .get("http://bigbadpc.local:3007/api/v1/wallet", { headers })
       .then((res) => {
         // Divide our balance by 1000 since it is denominated in millisats
         setBalance(res.data.balance / 1000);
@@ -62,10 +62,10 @@ function App() {
   const getTransactions = () => {
     // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
-      "X-Api-Key": "e9a0be9b5fd45538b002894ff7e28",
+      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
     };
     axios
-      .get("https://legend.lnbits.com/api/v1/payments", { headers })
+      .get("http://bigbadpc.local:3007/api/v1/payments", { headers })
       .then((res) => {
         setTransactions(res.data);
       })
@@ -179,7 +179,9 @@ function App() {
               rel="noopener noreferrer">
                 BIT.LIV
               </a>
+              <div>
               <WhitePaper />
+              </div>
               <a 
               className="p"
               href="https://lnvisualizer.com/"
@@ -206,7 +208,9 @@ function App() {
               color="#D45F10">
                 12-25-2364
               </a>
+              <div>
               <PdfModal />
+              </div>
               <a 
               className="p"
               href="https://nakamotoinstitute.org/cypherpunk-manifesto/"
@@ -241,8 +245,8 @@ function App() {
       <div className="row">
         <div className="balance-card">
           <div className="balance-content">
-            <h2>Balance</h2>
-            <p>{balance} sats</p>
+            <h2>Satoshis</h2>
+            <p>{balance}</p>
           </div>
         </div>
         <div className="balance-card">
@@ -316,11 +320,13 @@ function App() {
         </h5>
       </footer>
       <div className="yessir">
+        <h3>
         <div className="video-container" autoplay="true" >
           <VideoPlayer />
         </div>
-        <p> - click for sound - - - - click for - </p>
+        <p> - click for sound - - - - - - - - - - click for - </p>
         <PdfModal />
+        </h3>
       </div>
     </div>
   );
