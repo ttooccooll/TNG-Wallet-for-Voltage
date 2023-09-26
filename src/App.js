@@ -48,7 +48,7 @@ function App() {
   const getWalletBalance = () => {
     // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
-      "X-Api-Key": "52cac212fc664da393ac45df991fdb84",
+      "X-Api-Key": "e9a0be9b5fd45538b002894ff7e28",
     };
     axios
       .get("https://legend.lnbits.com/api/v1/wallet", { headers })
@@ -62,7 +62,7 @@ function App() {
   const getTransactions = () => {
     // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
-      "X-Api-Key": "52cac212fc664da393ac45df991fdb84",
+      "X-Api-Key": "e9a0be9b5fd45538b002894ff7e28",
     };
     axios
       .get("https://legend.lnbits.com/api/v1/payments", { headers })
@@ -130,105 +130,112 @@ function App() {
        <AudioPlayerComponent autoplay={true} />
       </div>
       <div className="row">
-        <div className="button-holder">
-          <Buttons />
+        <div className="button-holder-holder">
+          <div className="button-holder">
+            <Buttons />
+          </div>
         </div>
         <div className="button-next">
+          <div className="insidebutton-next"></div>
         </div>
         <div className="button-nextest">
+          <div className="insidebutton-nextest"></div>
         </div>
         <div className="button-nextestly">
+          <div className="insidebutton-nextestly"></div>
         </div>
         <div className="button-nextiest">
-          <p>
-            <a 
-            className="p"
-            href="https://mempool.space/"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer">
-              MEM.SPC
-            </a>
-            <a 
-            className="p"
-            href="https://www.pleblab.com/"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer">
-              P.Lab
-            </a>
-            <a 
-            className="p"
-            href="https://www.st-minutiae.com/resources/rulesofacquisition.html"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer">
-              R0A
-            </a>
-            <a 
-            className="p"
-            href="https://bitfeed.live/"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer">
-              BIT.LIV
-            </a>
-            <WhitePaper />
-            <a 
-            className="p"
-            href="https://lnvisualizer.com/"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer">
-              LN-VIS
-            </a>
-            <a 
-            className="p"
-            href="https://bitcoinexplorer.org/"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="element"non-breaking-word>
-              BTC-EXP
-            </a>
-            <a 
-            className="p"
-            href="https://www.youtube.com/watch?v=sZt6eU5REN8"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="#D45F10">
-              12-25-2364
-            </a>
-            <PdfModal />
-            <a 
-            className="p"
-            href="https://nakamotoinstitute.org/cypherpunk-manifesto/"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="#D45F10">
-              03-09-93
-            </a>
-            <a 
-            className="p"
-            href="https://www.youtube.com/watch?v=YRyioZK6BOc"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="#D45F10">
-              5.P0T
-            </a>
-            <a 
-            className="p"
-            href="https://1ml.com/statistics"
-            onClick={playMP3}
-            target="_blank"
-            rel="noopener noreferrer"
-            color="#D45F10">
-              LN.1ML
-            </a>
-          </p>
+          <div className="insidebutton-nextiest">
+            <p>
+              <a 
+              className="p"
+              href="https://mempool.space/"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer">
+                MEM.SPC
+              </a>
+              <a 
+              className="p"
+              href="https://www.pleblab.com/"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer">
+                P.Lab
+              </a>
+              <a 
+              className="p"
+              href="https://www.st-minutiae.com/resources/rulesofacquisition.html"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer">
+                R0A
+              </a>
+              <a 
+              className="p"
+              href="https://bitfeed.live/"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer">
+                BIT.LIV
+              </a>
+              <WhitePaper />
+              <a 
+              className="p"
+              href="https://lnvisualizer.com/"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer">
+                LN-VIS
+              </a>
+              <a 
+              className="p"
+              href="https://bitcoinexplorer.org/"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="element"non-breaking-word>
+                BTC-EXP
+              </a>
+              <a 
+              className="p"
+              href="https://www.youtube.com/watch?v=sZt6eU5REN8"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="#D45F10">
+                12-25-2364
+              </a>
+              <PdfModal />
+              <a 
+              className="p"
+              href="https://nakamotoinstitute.org/cypherpunk-manifesto/"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="#D45F10">
+                03-09-93
+              </a>
+              <a 
+              className="p"
+              href="https://www.youtube.com/watch?v=YRyioZK6BOc"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="#D45F10">
+                5.P0T
+              </a>
+              <a 
+              className="p"
+              href="https://1ml.com/statistics"
+              onClick={playMP3}
+              target="_blank"
+              rel="noopener noreferrer"
+              color="#D45F10">
+                LN.1ML
+              </a>
+            </p>
+          </div>
         </div>
       </div>
       <div className="row">
@@ -247,54 +254,66 @@ function App() {
       </div>
       <div className="row">
         <div className="row-item">
-          <Transactions transactions={transactions} />
+          <div className="row-itemer">
+            <Transactions transactions={transactions} />
+          </div>
         </div>
         <div className="row-itemz">
           <Chart chartData={chartData} />
         </div>
       </div>
       <div className="mostprefooter">
-        <div class="content-container">
-         <ul>
-          {chartData &&
-            chartData.map((dataPoint, index) => (
-              <li key={index}>
-                {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
-              </li>
-            ))}
-          </ul>
+        <div className="inside-footer">
+         <div class="content-container">
+          <ul>
+            {chartData &&
+              chartData.map((dataPoint, index) => (
+                <li key={index}>
+                  {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className="moreprefooter">
-        <div class="content-container">
+        <div className="inside-footer">
+          <div class="content-container">
             <ul>
               {chartData &&
                 chartData.map((dataPoint, index) => (
                   <li key={index}>
                     Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
                   </li>
-               ))}
+              ))}
             </ul>
           </div>
         </div>
+      </div>
       <div className="prefooter">
-        <div class="content-container">
-          <ul>
-            {chartData &&
-              chartData.map((dataPoint, index) => (
-                <li key={index}>
-                  Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
-                </li>
-              ))}
-          </ul>
+        <div className="inside-footer">
+          <div class="content-container">
+            <ul>
+              {chartData &&
+                chartData.map((dataPoint, index) => (
+                  <li key={index}>
+                    Stardate {new Date(dataPoint.x).toLocaleString('en-US', { hour12: false }).replace(/\//g, '.')}, USD-BTC: {dataPoint.y}
+                  </li>
+                ))}
+            </ul>
+          </div>
         </div>
       </div>
       <footer>
-        <p><BitcoinBlockHeight /></p>
-        <p><TotalBTC /></p>
-        <p><BitcoinBlockReward /></p>
-        <p><BitcoinHashWin /></p>
-        <p>security-status - <BitcoinDifficulty /></p>
+        <h5>
+          <p><BitcoinBlockHeight /></p>
+          <p><TotalBTC /></p>
+          <p><BitcoinBlockReward /></p>
+          <p><BitcoinHashWin /></p>
+          <p className="right">
+            <BitcoinDifficulty />
+          </p>
+        </h5>
       </footer>
       <div className="yessir">
         <div className="video-container" autoplay="true" >

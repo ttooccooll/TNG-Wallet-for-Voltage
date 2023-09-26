@@ -24,9 +24,9 @@ function BitcoinDifficulty() {
   }, []);
 
   return (
-    <div>
-      <p>{difficulty}</p>
-    </div>
+    <p>
+      security-status - {difficulty}
+    </p>
   );
 }
 

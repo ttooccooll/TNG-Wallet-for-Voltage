@@ -10,7 +10,7 @@ label {
 }
 
 .button {
-  background-color: #0946EE;
+  background: linear-gradient(to right, rgba(9, 70, 238, 0.7) 0%, rgba(9, 70, 238, 1) 50%, rgba(9, 70, 238, 0.7) 100%);
   border: 0px solid #3787FE;
   border-radius: 5px;
   padding: 5px;
@@ -25,7 +25,7 @@ label {
 }
 
 .a {
-  background-color: #0946EE;
+  background: linear-gradient(to right, rgba(9, 70, 238, 0.7) 0%, rgba(9, 70, 238, 1) 50%, rgba(9, 70, 238, 0.7) 100%);
   border: 0px solid #3787FE;
   border-radius: 5px;
   padding: 5px;

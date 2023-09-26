@@ -1,4 +1,8 @@
-/* Styles for the modal overlay */
+@font-face {
+  font-family: 'MyFont';
+  src: url('Sterilict-L3aen.ttf') format('truetype');
+}
+
 .modal-overlay {
     display: flex;
     justify-content: center;
@@ -11,15 +15,17 @@
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     z-index: 1000; /* A high z-index to ensure it's on top */
     cursor: crosshair;
+    font-family: 'MyFont';
   }
   
   /* Styles for the modal content */
   .modal-content {
     background: rgba(0, 0, 0, 0.5);
-    padding: 100%;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     cursor: crosshair;
+    color: white;
+    font-family: 'MyFont';
   }
   
   /* Styles for the modal inner content */
@@ -39,6 +45,7 @@
     right: 10px; /* Adjust the right position as needed */
     font-size: 20px;
     cursor: crosshair;
+    font-family: 'MyFont';
   }
   
   /* Style for the iframe content */

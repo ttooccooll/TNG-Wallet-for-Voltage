@@ -24,7 +24,7 @@ const Chart = ({ chartData }) => {
       ) : (
         <LineChart
           xLabel="Time"
-          height={325}
+          height={300}
           //  ToDo: Customize width to be responsive based on screen size
           width={500}
           data={data}

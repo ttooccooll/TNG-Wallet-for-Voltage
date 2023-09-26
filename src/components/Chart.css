@@ -8,10 +8,13 @@
   font-family: 'MyFont';
   background: linear-gradient(135deg, #000000, #001f3f); /* Gradient background */
   cursor: crosshair;
-  padding-left: 4%;
-  padding-right: 4%;
+  margin: 0% 0% 0% 0%;
   overflow: hidden;
   box-shadow: rgba(106, 208, 193, 0.35) 0px -50px 536px -28px inset;
+  border-radius: 25px;
+  height: fit-content;
+  width: fit-content;
+  padding: 0% 6% 0% 6%;
 }
 
 /* Change color of x-axis labels (Time) */
