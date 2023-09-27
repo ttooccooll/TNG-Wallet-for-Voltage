@@ -147,7 +147,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       {/* If we are displaying our newly created invoice */}
       {invoice && (
         <section>
-          <h3>Invoice created</h3>
+          <h6>Invoice created</h6>
           <div className="qr-code-container">
             <QRCode value={invoice} size={128} fgColor="#000" bgColor="#fff" />
           </div>
@@ -157,7 +157,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       {/* If we are displaying the status of our successful payment */}
       {paymentInfo.paymentHash && (
         <section>
-          <h3>Payment sent</h3>
+          <h6>Payment sent</h6>
           <p>Payment hash: {paymentInfo.paymentHash}</p>
           <p>Checking id: {paymentInfo.checkingId}</p>
         </section>

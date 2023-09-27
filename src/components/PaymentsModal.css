@@ -27,11 +27,18 @@ form .button:hover{
 opacity: .6;
 }
 
-section h3 {
+section h6 {
   text-align: center;
   font-family: 'MyFont';
+  font-size: large;
   background-color: black;
   color: white;
+  position: relative;
+  display: flex;
+  text-align: flex-start;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 section p {
@@ -41,6 +48,7 @@ section p {
   background-color: black;
   color: white;
   margin: 10px;
+  position: relative;
 }
 
 .close-button {
