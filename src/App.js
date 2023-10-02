@@ -48,7 +48,6 @@ function App() {
   };
 
   const getWalletBalance = () => {
-    // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
       "X-Api-Key": apiKey,
     };
@@ -62,7 +61,6 @@ function App() {
   };
 
   const getTransactions = () => {
-    // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
       "X-Api-Key": apiKey,
     };
