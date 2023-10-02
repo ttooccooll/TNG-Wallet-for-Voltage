@@ -27,6 +27,8 @@ function App() {
     audio.play();
   };
 
+  const apiKey = process.env.REACT_APP_X_API_KEY;
+
   const getPrice = () => {
     // Axios is a library that makes it easy to make http requests
     // After we make a request, we can use the .then() method to handle the response asychronously
@@ -48,7 +50,7 @@ function App() {
   const getWalletBalance = () => {
     // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
-      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
+      "X-Api-Key": apiKey,
     };
     axios
       .get("http://bigbadpc.local:3007/api/v1/wallet", { headers })
@@ -62,7 +64,7 @@ function App() {
   const getTransactions = () => {
     // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
     const headers = {
-      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
+      "X-Api-Key": apiKey,
     };
     axios
       .get("http://bigbadpc.local:3007/api/v1/payments", { headers })
