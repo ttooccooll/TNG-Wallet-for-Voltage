@@ -18,12 +18,15 @@
 
 .modal-content-centered {
   background-color: rgba(0, 0, 0, 0.7);
-  padding: 2000px;
+  padding: 100%;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  position: relative;
+  position: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   z-index: 9999;
+  margin-top: 1%;
 }
 
 .close {
@@ -38,6 +41,6 @@
 }
 
 .full-height-image {
-  max-height: 80vh;
+  max-height: 95vh;
   width: auto;
 }

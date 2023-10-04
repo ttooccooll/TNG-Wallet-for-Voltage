@@ -55,8 +55,8 @@ function PdfModal() {
               <iframe
                 src={`${process.env.PUBLIC_URL}/bitcoin.pdf`}
                 title="PDF Viewer"
-                width="1000px"
-                height="1000px" // Adjust the height as needed
+                width="500px"
+                height="600px"
               ></iframe>
             </div>
           </div>

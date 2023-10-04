@@ -599,7 +599,7 @@ position: relative;
   left: 0;
   right: 0;
   margin-top: 2px;
-  margin-bottom: 3%;
+  margin-bottom: 1.5%;
   position: relative;
   overflow: hidden;
   margin-left: 2%;
@@ -615,7 +615,7 @@ h3 {
   position: relative;
   background: #000000;
   border: black;
-  height: 10%;
+  height: 3vh;
   width: 100%;
   overflow: hidden;
   padding-top: 0%;

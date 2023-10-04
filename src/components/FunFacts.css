@@ -8,6 +8,7 @@
     width: 10vw;
     opacity: .8;
     margin: 0;
+    white-space: nowrap;
   }
   
   .total-btc:hover {
