@@ -4,7 +4,6 @@ import Buttons from "./components/Buttons";
 import Transactions from "./components/Transactions";
 import axios from "axios";
 import "./App.css";
-import VideoPlayer from './components/VideoPlayer';
 import AudioPlayerComponent from './components/AudioPlayer';
 import BitcoinBlockHeight from './components/BlockHeight';
 import TotalBTC from './components/TotalBitcoin'
@@ -35,13 +34,11 @@ function App() {
     // This is an alternative to using async/await
     axios
       .get("https://api.coinbase.com/v2/prices/BTC-USD/spot")
-      // .then is a promise that will run when the API call is successful
       .then((res) => {
         const formattedPrice = Number(res.data.data.amount).toFixed(4)
         setPrice(formattedPrice);
         updateChartData(formattedPrice);
       })
-      // .catch is a promise that will run if the API call fails
       .catch((err) => {
         console.log(err);
       });
@@ -54,7 +51,6 @@ function App() {
     axios
       .get("http://bigbadpc.local:3007/api/v1/wallet", { headers })
       .then((res) => {
-        // Divide our balance by 1000 since it is denominated in millisats
         setBalance(res.data.balance / 1000);
       })
       .catch((err) => console.log(err));
@@ -321,11 +317,6 @@ function App() {
       </footer>
       <div className="yessir">
         <h3>
-        <div className="video-container" autoplay="true" >
-          <VideoPlayer />
-        </div>
-        <p> - click for sound - - - - - - - - - - click for - </p>
-        <PdfModal />
         </h3>
       </div>
     </div>
