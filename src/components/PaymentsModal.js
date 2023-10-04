@@ -42,7 +42,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       out: true,
     };
     axios
-      .post("http://bigbadpc.local:3007/api/v1/payments", data, { headers })
+      .post("https://48f31a1603.d.voltageapp.io/api/v1/payments", data, { headers })
       .then((res) =>
         setPaymentInfo({
           paymentHash: res.data.payment_hash,
@@ -68,7 +68,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
       memo: "LNBits",
     };
     axios
-      .post("http://bigbadpc.local:3007/api/v1/payments", data, { headers })
+      .post("https://48f31a1603.d.voltageapp.io/api/v1/payments", data, { headers })
       .then((res) => setInvoice(res.data.payment_request))
       .catch((err) => console.log(err));
 

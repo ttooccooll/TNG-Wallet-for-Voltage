@@ -49,7 +49,7 @@ function App() {
       "X-Api-Key": apiKey,
     };
     axios
-      .get("http://bigbadpc.local:3007/api/v1/wallet", { headers })
+      .get("https://48f31a1603.d.voltageapp.io/api/v1/wallet", { headers })
       .then((res) => {
         setBalance(res.data.balance / 1000);
       })
@@ -61,7 +61,7 @@ function App() {
       "X-Api-Key": apiKey,
     };
     axios
-      .get("http://bigbadpc.local:3007/api/v1/payments", { headers })
+      .get("https://48f31a1603.d.voltageapp.io/api/v1/payments", { headers })
       .then((res) => {
         setTransactions(res.data);
       })
