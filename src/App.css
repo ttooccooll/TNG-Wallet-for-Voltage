@@ -382,6 +382,7 @@ footer p {
   font-weight: lighter;
   display: grid;
   flex-wrap: nowrap;
+  white-space: nowrap;
   flex-direction: column;
   justify-content: space-around;
   align-items: space-around;
