@@ -51,7 +51,7 @@ function App() {
     axios
       .get("https://48f31a1603.d.voltageapp.io/api/v1/wallet", { headers })
       .then((res) => {
-        setBalance(res.data.balance / 2000);
+        setBalance(res.data.balance / 1000);
       })
       .catch((err) => console.log(err));
   };
@@ -115,7 +115,7 @@ function App() {
     const walletAndTransactionsInterval = setInterval(() => {
       getWalletBalance();
       getTransactions();
-    }, 3000);
+    }, 5000);
   
     return () => {
       clearInterval(priceInterval);

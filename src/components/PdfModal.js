@@ -31,6 +31,7 @@ function PdfModal() {
           color: 'aqua',
           cursor: 'default',
           textDecoration: 'none',
+          fontSize: 'small',
           opacity: 1,
         }}
         onMouseEnter={(e) => {
@@ -52,7 +53,7 @@ function PdfModal() {
             </span>
             <div className="modal-inner">
               <img
-                src={`${process.env.PUBLIC_URL}/TNGFAQ.jpg`}
+                src={`${process.env.PUBLIC_URL}/TNGFAQ.png`}
                 alt="FAQ"
                 className="full-height-image"
                 style={{ border: '1px solid white' }}

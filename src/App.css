@@ -95,9 +95,9 @@ footer p {
 .right {
   width:fit-content;
   white-space: nowrap;
-  margin-left: 3vw;
+  margin-left: 9vw;
   margin-right: 1vw;
-  padding-right: 8vw;
+  padding-right: 7.5vw;
   overflow: flex;
 }
 
@@ -395,6 +395,7 @@ footer p {
   background: black;
   color: aqua;
   text-decoration: none;
+  font-size: small;
   cursor: default;
   flex-direction: column;
   flex-wrap: nowrap;
