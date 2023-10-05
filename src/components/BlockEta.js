@@ -22,7 +22,7 @@ function BitcoinHashWin() {
 
     getHashWin();
 
-    const intervalId = setInterval(getHashWin, 15000);
+    const intervalId = setInterval(getHashWin, 12000);
 
     return () => clearInterval(intervalId);
   }, []);
