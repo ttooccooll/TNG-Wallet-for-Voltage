@@ -442,12 +442,11 @@ footer p {
 }
 
 .balance-card h2 {
-  font-size: 1.5rem;
+  font-size: 1.2em;
 }
 
 .balance-card p {
-  font-size: 1.5rem;
-  font-weight: lighter;
+  font-size: 1.2em;
   font-family: 'MyFont';
   background-color: black;
   border-color: #000000;
@@ -598,12 +597,8 @@ position: relative;
   bottom: 10;
   left: 0;
   right: 0;
-  margin-top: 2px;
-  margin-bottom: 1.5%;
+  margin: 2px 2% 1.5% 2%;
   position: relative;
-  overflow: hidden;
-  margin-left: 2%;
-  margin-right: 2%;
   background: linear-gradient(to right, rgba(206, 151, 18, 0.7) 0%, rgba(206, 151, 18, 1) 50%, rgba(206, 151, 18, 0.7) 100%);
 }
 
@@ -617,7 +612,6 @@ h3 {
   border: black;
   height: 3vh;
   width: 100%;
-  overflow: hidden;
   padding-top: 0%;
   border-top: 25px solid transparent;
   border-left: 55px solid transparent;

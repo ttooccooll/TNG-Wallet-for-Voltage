@@ -4,10 +4,17 @@ import "./Transactions.css";
 export const Transactions = ({ transactions }) => {
   // ToDo: Improve tx parsing to display internal payments, incomplete payments, and further verify the transactions we are listing out
   const parseTx = (tx) => {
-    // turn unix timestamp into a date
-    // Todo: format date further to include hours, minutes, and seconds
-    const date = new Date(tx.time * 1000);
-    const formattedDate = date.toLocaleDateString("en-US").replace(/\//g, '.');
+
+  const date = new Date(tx.time * 1000);
+  const formattedDate = date.toLocaleString("en-US", {
+    year: "numeric",
+    month: "numeric",
+    day: "numeric",
+    hour: "numeric",
+    minute: "numeric",
+    second: "numeric",
+    hour12: false,
+  }).replace(/\//g, '.');
     // ToDo: Handle pending payments since we are currently ignoring them and not displaying them on our past transactions list
     if (tx.pending) return null;
 

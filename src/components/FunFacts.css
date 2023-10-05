@@ -1,11 +1,11 @@
 .total-btc {
     font-size: .9vh;
-    padding: 1vh;
+    padding: 1vh 1vh 1vh 0%;
     color: black;
     background: linear-gradient(to right, rgba(0, 255, 255, 0.7) 0%, rgba(0, 255, 255, 1) 50%, rgba(0, 255, 255, 0.7) 100%);
     border-radius: 150vh;
     border-color: aqua;
-    width: 10vw;
+    width: 9vw;
     opacity: .8;
     margin: 0;
     white-space: nowrap;

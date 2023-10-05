@@ -19,7 +19,7 @@ function BitcoinBlockReward() {
 
     getBlockReward();
 
-    const intervalId = setInterval(getBlockReward, 600000);
+    const intervalId = setInterval(getBlockReward, 10000000000);
 
     return () => clearInterval(intervalId);
   }, []);

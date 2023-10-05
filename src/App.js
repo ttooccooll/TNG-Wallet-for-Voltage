@@ -11,7 +11,7 @@ import BitcoinDifficulty from './components/Difficulty'
 import PdfModal from './components/PdfModal';
 import WhitePaper from './components/WhitePaper';
 import BitcoinBlockReward from './components/BlockReward';
-import BitcoinHashWin from './components/HashWin';
+import BitcoinHashWin from './components/BlockEta';
 
 function App() {
   // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
@@ -51,7 +51,7 @@ function App() {
     axios
       .get("https://48f31a1603.d.voltageapp.io/api/v1/wallet", { headers })
       .then((res) => {
-        setBalance(res.data.balance / 1000);
+        setBalance(res.data.balance / 2000);
       })
       .catch((err) => console.log(err));
   };
@@ -108,14 +108,21 @@ function App() {
   }, [getPrice]);
 
   useEffect(() => {
-    // setInterval will run whatever is in the callback function every friggin second
-    const interval = setInterval(() => {
+    const priceInterval = setInterval(() => {
       getPrice();
+    }, 1000);
+  
+    const walletAndTransactionsInterval = setInterval(() => {
       getWalletBalance();
       getTransactions();
-    }, 1000);
-    return () => clearInterval(interval);
+    }, 3000);
+  
+    return () => {
+      clearInterval(priceInterval);
+      clearInterval(walletAndTransactionsInterval);
+    };
   }, []);
+  
 
   return (
     <div className="App">
