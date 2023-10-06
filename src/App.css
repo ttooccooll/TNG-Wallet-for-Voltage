@@ -407,14 +407,11 @@ footer p {
 }
 
 .button-nextiest p div {
-  background: black;
-  color: aqua;
   text-decoration: none;
   font-size: small;
   cursor: default;
   flex-direction: column;
   flex-wrap: nowrap;
-  overflow: hidden;
   max-width: 100%;
   height: 22.4px;
   flex-basis: calc(33.33% - 10px);
