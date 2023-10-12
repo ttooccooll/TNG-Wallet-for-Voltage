@@ -29,9 +29,6 @@ function App() {
   const apiKey = process.env.REACT_APP_X_API_KEY;
 
   const getPrice = () => {
-    // Axios is a library that makes it easy to make http requests
-    // After we make a request, we can use the .then() method to handle the response asychronously
-    // This is an alternative to using async/await
     axios
       .get("https://api.coinbase.com/v2/prices/BTC-USD/spot")
       .then((res) => {
@@ -47,6 +44,7 @@ function App() {
   const getWalletBalance = () => {
     const headers = {
       "X-Api-Key": apiKey,
+      "Access-Control-Allow-Origin": "*"
     };
     axios
       .get("https://48f31a1603.d.voltageapp.io/api/v1/wallet", { headers })
@@ -59,6 +57,7 @@ function App() {
   const getTransactions = () => {
     const headers = {
       "X-Api-Key": apiKey,
+      "Access-Control-Allow-Origin": "*"
     };
     axios
       .get("https://48f31a1603.d.voltageapp.io/api/v1/payments", { headers })

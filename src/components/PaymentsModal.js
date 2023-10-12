@@ -36,6 +36,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
 
     const headers = {
       "X-Api-Key": apiKey,
+      "Access-Control-Allow-Origin": "*"
     };
     const data = {
       bolt11: formData.invoiceToPay,
@@ -60,6 +61,7 @@ const PaymentsModal = ({ modalState, setModalState }) => {
 
     const headers = {
       "X-Api-Key": apiKey,
+      "Access-Control-Allow-Origin": "*"
     };
     const data = {
       amount: formData.amount,

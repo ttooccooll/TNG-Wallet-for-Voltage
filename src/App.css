@@ -485,6 +485,8 @@ footer p {
 .row {
   margin-top: 1px;
   width: 100%;
+  max-width: 100%;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

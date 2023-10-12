@@ -19,7 +19,6 @@ const Chart = ({ chartData }) => {
   return (
     <div className="chart-container">
       {chartData && chartData.length <= 1 ? (
-        // ToDo: Add a loading spinner
         <p>Loading</p>
       ) : (
         <LineChart
