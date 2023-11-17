@@ -6,8 +6,8 @@ import axios from "axios";
 import "./App.css";
 import AudioPlayerComponent from './components/AudioPlayer';
 import BitcoinBlockHeight from './components/BlockHeight';
-import TotalBTC from './components/TotalBitcoin'
-import BitcoinDifficulty from './components/Difficulty'
+import TotalBTC from './components/TotalBitcoin';
+import BitcoinDifficulty from './components/Difficulty';
 import PdfModal from './components/PdfModal';
 import WhitePaper from './components/WhitePaper';
 import BitcoinBlockReward from './components/BlockReward';
