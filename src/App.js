@@ -47,8 +47,6 @@ function App() {
     audio.play();
   };
 
-  const apiKey = process.env.REACT_APP_X_API_KEY;
-
   const getPrice = () => {
     axios
       .get("https://api.coinbase.com/v2/prices/BTC-USD/spot")
