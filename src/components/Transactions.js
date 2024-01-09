@@ -23,7 +23,7 @@ export const Transactions = ({ transactions }) => {
         <div key={tx.checking_id} className="t">
           <p className="t">Inbound - {tx.bolt11.substring(0, 30)}</p>
           <p className="t">+{tx.amount / 1000} satoshis</p>
-          <p className="t">{formattedDate}</p>
+          <p className="t">Stardate {formattedDate}</p>
         </div>
       );
     }
