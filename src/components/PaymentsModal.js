@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 import "./PaymentsModal.css";
@@ -71,7 +71,6 @@ const PaymentsModal = ({ modalState, setModalState, user }) => {
     return;
   };
 
-  // Function to clear all of our state when we close the modal
   const clearForms = () => {
     setModalState({
       type: "",

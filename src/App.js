@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Chart from "./components/Chart";
+import Header from "./components/Header";
 import Buttons from "./components/Buttons";
 import Transactions from "./components/Transactions";
 import axios from "axios";
@@ -147,8 +148,8 @@ function App() {
 
   return (
     <div className="App">
-      <header >
-        <h1 > BTC-1701-D -- United Federation of Sovereign Individuals </h1>
+      <header>
+        <h1> BTC-1701-D -- United Federation of Sovereign Individuals </h1>
       </header>
       <div>
        <AudioPlayerComponent autoplay={true} />
@@ -156,6 +157,7 @@ function App() {
       <div className="row">
         <div className="button-holder-holder">
           <div className="button-holder">
+          <Header isLoggedIn={isLoggedIn} user={user} />
             <Buttons isLoggedIn={isLoggedIn} user={user} />
           </div>
         </div>
@@ -270,7 +272,7 @@ function App() {
         <div className="balance-card">
           <div className="balance-content">
             <h2>Satoshis</h2>
-            <p>{balance} {channelBalance} sats</p>
+            <p>{balance} sats {channelBalance} sats</p>
           </div>
         </div>
         <div className="balance-card">

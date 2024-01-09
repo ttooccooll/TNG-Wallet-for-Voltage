@@ -76,15 +76,13 @@ const Header = ({ isLoggedIn, user }) => {
   };
 
   return (
-    <header className="header-container">
-      <div></div> {/* Empty div for flex alignment */}
-      <h1>pleb wallet</h1>
+    <div className="header-container">
       <div className="auth-container">
-        {isLoggedIn ? <p className="user">Welcome, {user.username}!</p> : null}
+        {isLoggedIn ? <p className="user">Captain {user.username}</p> : null}
 
         {isLoggedIn ? (
           <button className="auth-button" onClick={handleLogout}>
-            Logout
+            Self Destruct
           </button>
         ) : (
           <>
@@ -168,7 +166,7 @@ const Header = ({ isLoggedIn, user }) => {
           <button type="submit">Signup</button>
         </form>
       </Modal>
-    </header>
+    </div>
   );
 };
 

@@ -48,6 +48,7 @@ footer {
   border-left: 95px solid transparent;
   border-radius: 25px;
   border-top-left-radius: 0px;
+  border-top-right-radius: 0%;
   border-bottom-right-radius: 0px;
   padding: 0;
   text-align: center;
@@ -256,6 +257,7 @@ footer p {
   background-color: #000000;
   border-radius: 25px;
   border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
   border-bottom-right-radius: 0%;
   border-left-width: 55px;
   border-right-width: 0px;

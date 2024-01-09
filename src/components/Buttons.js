@@ -7,7 +7,7 @@ const playMP3 = () => {
   audio.play();
 };
 
-export const Buttons = () => {
+export const Buttons = ({ isLoggedIn, user }) => {
   const [modalState, setModalState] = useState({
     type: "",
     open: false,
@@ -25,6 +25,7 @@ export const Buttons = () => {
               open: true,
             });
           }}
+          disabled={!isLoggedIn}
         >
           Send
         </button>
@@ -38,6 +39,7 @@ export const Buttons = () => {
               open: true,
             });
           }}
+          disabled={!isLoggedIn}
         >
           Receive
         </button>
@@ -51,9 +53,14 @@ export const Buttons = () => {
         >
           Status
         </a>
-
       </div>
-      <PaymentsModal modalState={modalState} setModalState={setModalState} />
+      
+      {!isLoggedIn && (
+        <p className="login-message">
+        </p>
+      )}
+
+      <PaymentsModal modalState={modalState} setModalState={setModalState} user={user} />
     </div>
   );
 };
