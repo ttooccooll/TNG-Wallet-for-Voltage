@@ -3,6 +3,7 @@ import Chart from "./components/Chart";
 import Buttons from "./components/Buttons";
 import Transactions from "./components/Transactions";
 import axios from "axios";
+import { axiosWithAuth } from "./utils/axiosWithAuth";
 import "./App.css";
 import AudioPlayerComponent from './components/AudioPlayer';
 import BitcoinBlockHeight from './components/BlockHeight';
@@ -14,12 +15,32 @@ import BitcoinBlockReward from './components/BlockReward';
 import BitcoinHashWin from './components/BlockEta';
 
 function App() {
-  // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
-  // Though this data will be lost on a refresh since we dont have a database
   const [price, setPrice] = useState(null);
   const [balance, setBalance] = useState(null);
+  const [user, setUser] = useState(null);
+  const [channelBalance, setChannelBalance] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [chartData, setChartData] = useState(null);
   const [transactions, setTransactions] = useState([]);
+
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+  useEffect(() => {
+    // Check if user is logged in
+    const token = localStorage.getItem("token");
+    // If user is logged in, get user info
+    if (token) {
+      axiosWithAuth()
+        .get(`${backendUrl}/users/user`)
+        .then((res) => {
+          setIsLoggedIn(true);
+          setUser(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
 
   const playMP3 = () => {
     const audio = new Audio("/tng_swoosh_clean.mp3");
@@ -42,25 +63,26 @@ function App() {
   };
 
   const getWalletBalance = () => {
-    const headers = {
-      "X-Api-Key": apiKey,
-      "Access-Control-Allow-Origin": "*"
-    };
     axios
-      .get("https://48f31a1603.d.voltageapp.io/api/v1/wallet", { headers })
+      .get(`${backendUrl}/lightning/balance`)
       .then((res) => {
-        setBalance(res.data.balance / 1000);
+        setBalance(res.data.total_balance);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const getChannelBalance = () => {
+    axios
+      .get(`${backendUrl}/lightning/channelbalance`)
+      .then((res) => {
+        setChannelBalance(res.data.balance);
       })
       .catch((err) => console.log(err));
   };
 
   const getTransactions = () => {
-    const headers = {
-      "X-Api-Key": apiKey,
-      "Access-Control-Allow-Origin": "*"
-    };
     axios
-      .get("https://48f31a1603.d.voltageapp.io/api/v1/payments", { headers })
+      .get(`${backendUrl}/lightning/invoices`)
       .then((res) => {
         setTransactions(res.data);
       })
@@ -103,6 +125,7 @@ function App() {
   useEffect(() => {
     getPrice();
     getWalletBalance();
+    getChannelBalance();
     getTransactions();
   }, []);
 
@@ -113,6 +136,7 @@ function App() {
   
     const walletAndTransactionsInterval = setInterval(() => {
       getWalletBalance();
+      getChannelBalance();
       getTransactions();
     }, 5000);
   
@@ -134,7 +158,7 @@ function App() {
       <div className="row">
         <div className="button-holder-holder">
           <div className="button-holder">
-            <Buttons />
+            <Buttons isLoggedIn={isLoggedIn} user={user} />
           </div>
         </div>
         <div className="button-next">
@@ -248,7 +272,7 @@ function App() {
         <div className="balance-card">
           <div className="balance-content">
             <h2>Satoshis</h2>
-            <p>{balance}</p>
+            <p>{balance} {channelBalance} sats</p>
           </div>
         </div>
         <div className="balance-card">
