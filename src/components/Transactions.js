@@ -45,7 +45,6 @@ const Transactions = ({ transactions }) => {
     (a, b) => new Date(b.created_at) - new Date(a.created_at)
   );
 
-  // The returned JSX displays a list of sorted transactions, where each transaction includes a description, a value, and a date.
   return (
     <div>
       <h4 className="tr">Transactions</h4>
