@@ -29,11 +29,12 @@ const Transactions = ({ transactions }) => {
   // Otherwise, it uses parts of the payment request to describe the transaction.
   const formatDescription = (tx) => {
     let description;
-    if (tx.settled === false) {
+    if (tx.settled === 0) {
       description = "en route";
     } else {
+      console.log("tx.send:", tx.send);
       description = `${
-        tx.send === false ? "Outbound -" : "Inbound -"
+        tx.send === 1 ? "Outbound -" : "Inbound -"
       } ${tx.payment_request.substring(0, 35)}...`;
     }
     return description;
