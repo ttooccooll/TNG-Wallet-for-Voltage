@@ -5,6 +5,26 @@ import "./Header.css";
 
 Modal.setAppElement("#root");
 
+const playMP3 = () => {
+  const audio = new Audio("/computerbeep_8.mp3");
+  audio.play();
+};
+
+const playMP5 = () => {
+  const audio = new Audio("/tng_swoosh_clean.mp3");
+  audio.play();
+};
+
+const playMP6 = () => {
+  const audio = new Audio("/largeexplosion4.mp3");
+  audio.play();
+};
+
+const playMP7 = () => {
+  const audio = new Audio("/tng_poweringup.mp3");
+  audio.play();
+};
+
 const customStyles = {
   content: {
     top: "50%",
@@ -13,7 +33,13 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
+    background: "black",
+    color: "white",
   },
+  overlay: {
+    background: "black",
+    opacity: .6
+  }
 };
 
 const Header = ({ isLoggedIn, user }) => {
@@ -41,7 +67,10 @@ const Header = ({ isLoggedIn, user }) => {
           password: "",
         });
 
-        window.location.reload();
+        playMP7();
+        setTimeout(() => {
+          window.location.reload();
+        }, 2000);
       })
       .catch((err) => {
         console.log(err);
@@ -62,6 +91,7 @@ const Header = ({ isLoggedIn, user }) => {
             username: "",
             password: "",
           });
+          playMP7();
         }
       })
       .catch((err) => {
@@ -71,8 +101,17 @@ const Header = ({ isLoggedIn, user }) => {
 
   const handleLogout = () => {
     localStorage.removeItem("token");
+    playMP6();
 
-    window.location.reload();
+    setTimeout(() => {
+      window.location.reload();
+    }, 10000); // 10000 milliseconds = 10 seconds
+
+    // Apply the shake animation to the body during the 10-second delay
+    document.body.classList.add('shake');
+    setTimeout(() => {
+      document.body.classList.remove('shake');
+    }, 11000);
   };
 
   return (
@@ -88,13 +127,13 @@ const Header = ({ isLoggedIn, user }) => {
           <>
             <button
               className="auth-button"
-              onClick={() => setLoginModalIsOpen(true)}
+              onClick={() => {playMP3(); setLoginModalIsOpen(true)}}
             >
               Login
             </button>
             <button
               className="auth-button"
-              onClick={() => setSignupModalIsOpen(true)}
+              onClick={() => {playMP3(); setSignupModalIsOpen(true)}}
             >
               Signup
             </button>
@@ -103,7 +142,7 @@ const Header = ({ isLoggedIn, user }) => {
       </div>
       <Modal
         isOpen={loginModalIsOpen}
-        onRequestClose={() => setLoginModalIsOpen(false)}
+        onRequestClose={() => {playMP5(); setLoginModalIsOpen(false)}}
         style={customStyles}
         contentLabel="Login Modal"
       >
@@ -137,7 +176,7 @@ const Header = ({ isLoggedIn, user }) => {
       </Modal>
       <Modal
         isOpen={signupModalIsOpen}
-        onRequestClose={() => setSignupModalIsOpen(false)}
+        onRequestClose={() => {playMP5(); setSignupModalIsOpen(false)}}
         style={customStyles}
         contentLabel="Signup Modal"
       >
