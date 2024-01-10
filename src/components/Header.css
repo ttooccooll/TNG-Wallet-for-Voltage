@@ -24,7 +24,7 @@
     font-size: .7rem;
     font-family: 'MyFont';
     font-weight: bold;
-    width: 100px;
+    width: 90px;
     margin: 5px;
     color: inherit;
     text-decoration: inherit;
@@ -32,6 +32,11 @@
     display: flex;
     align-items: row;
     justify-content: row;
+  }
+
+  .user:hover {
+    cursor: default;
+    opacity: 0.6;
   }
   
   .auth-button {
@@ -42,7 +47,7 @@
     font-size: .7rem;
     font-family: 'MyFont';
     font-weight: bold;
-    width: 100px;
+    width: 90px;
     margin: 5px;
     color: inherit;
     text-decoration: inherit;
