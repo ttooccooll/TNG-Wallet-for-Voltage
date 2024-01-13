@@ -25,6 +25,11 @@ const playMP7 = () => {
   audio.play();
 };
 
+const playMP8 = () => {
+  const audio = new Audio("/denybeep.mp3");
+  audio.play();
+};
+
 const customStyles = {
   content: {
     top: "50%",
@@ -49,6 +54,7 @@ const Header = ({ isLoggedIn, user }) => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    rank: "",
   });
 
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
@@ -65,6 +71,7 @@ const Header = ({ isLoggedIn, user }) => {
         setFormData({
           username: "",
           password: "",
+          rank: "",
         });
 
         playMP7();
@@ -77,8 +84,19 @@ const Header = ({ isLoggedIn, user }) => {
       });
   };
 
+  const [signupError, setSignupError] = useState(null);
+  const [flashMessage, setFlashMessage] = useState(false);
+
   const handleSignup = (event) => {
+
+          // Check if the selected rank is "Plebian"
+  if (formData.rank !== "Plebian") {
     event.preventDefault();
+    playMP8();
+    setSignupError(`There are no ${formData.rank}s in bitcoin.`);
+    setFlashMessage(true);
+      return; // Exit the function without making the API call
+    }
 
     axios
       .post(`${backendUrl}/users/register`, formData)
@@ -117,7 +135,7 @@ const Header = ({ isLoggedIn, user }) => {
   return (
     <div className="header-container">
       <div className="auth-container">
-        {isLoggedIn ? <p className="user">Captain {user.username}</p> : null}
+        {isLoggedIn ? <p className="user">Plebian {user.username}</p> : null}
 
         {isLoggedIn ? (
           <button className="auth-button" onClick={handleLogout}>
@@ -182,6 +200,7 @@ const Header = ({ isLoggedIn, user }) => {
       >
         <h2>Signup</h2>
         <form onSubmit={handleSignup}>
+        {signupError && <p className={`error-message ${flashMessage ? 'flash' : ''}`}>{signupError}</p>}
           <label>
             Username:
             <input
@@ -201,6 +220,22 @@ const Header = ({ isLoggedIn, user }) => {
                 setFormData({ ...formData, password: e.target.value })
               }
             />
+          </label>
+          <label>
+            Rank:
+            <select
+              value={formData.rank}
+              onChange={(e) =>
+                setFormData({ ...formData, rank: e.target.value })
+              }
+            >
+              <option value="Ensign">Ensign</option>
+              <option value="Lieutenant">Lieutenant</option>
+              <option value="Commander">Commander</option>
+              <option value="Captain">Captain</option>
+              <option value="Admiral">Admiral</option>
+              <option value="Plebian">Plebian</option>
+            </select>
           </label>
           <button type="submit">Signup</button>
         </form>
