@@ -1,26 +1,47 @@
 import React, { useEffect, useState } from "react";
 import Chart from "./components/Chart";
+import Header from "./components/Header";
 import Buttons from "./components/Buttons";
 import Transactions from "./components/Transactions";
 import axios from "axios";
+import { axiosWithAuth } from "./utils/axiosWithAuth";
 import "./App.css";
-import VideoPlayer from './components/VideoPlayer';
 import AudioPlayerComponent from './components/AudioPlayer';
 import BitcoinBlockHeight from './components/BlockHeight';
-import TotalBTC from './components/TotalBitcoin'
-import BitcoinDifficulty from './components/Difficulty'
+import TotalBTC from './components/TotalBitcoin';
+import BitcoinDifficulty from './components/Difficulty';
 import PdfModal from './components/PdfModal';
 import WhitePaper from './components/WhitePaper';
 import BitcoinBlockReward from './components/BlockReward';
-import BitcoinHashWin from './components/HashWin';
+import BitcoinHashWin from './components/BlockEta';
 
 function App() {
-  // useState lets us store/update/pass data from inside of this component and also refresh the component when the data changes
-  // Though this data will be lost on a refresh since we dont have a database
   const [price, setPrice] = useState(null);
   const [balance, setBalance] = useState(null);
+  const [user, setUser] = useState(null);
+  const [channelBalance, setChannelBalance] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [chartData, setChartData] = useState(null);
   const [transactions, setTransactions] = useState([]);
+
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
+  useEffect(() => {
+    // Check if user is logged in
+    const token = localStorage.getItem("token");
+    // If user is logged in, get user info
+    if (token) {
+      axiosWithAuth()
+        .get(`${backendUrl}/users/user`)
+        .then((res) => {
+          setIsLoggedIn(true);
+          setUser(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  }, []);
 
   const playMP3 = () => {
     const audio = new Audio("/tng_swoosh_clean.mp3");
@@ -28,44 +49,39 @@ function App() {
   };
 
   const getPrice = () => {
-    // Axios is a library that makes it easy to make http requests
-    // After we make a request, we can use the .then() method to handle the response asychronously
-    // This is an alternative to using async/await
     axios
       .get("https://api.coinbase.com/v2/prices/BTC-USD/spot")
-      // .then is a promise that will run when the API call is successful
       .then((res) => {
         const formattedPrice = Number(res.data.data.amount).toFixed(4)
         setPrice(formattedPrice);
         updateChartData(formattedPrice);
       })
-      // .catch is a promise that will run if the API call fails
       .catch((err) => {
         console.log(err);
       });
   };
 
   const getWalletBalance = () => {
-    // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
-    const headers = {
-      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
-    };
     axios
-      .get("http://bigbadpc.local:3007/api/v1/wallet", { headers })
+      .get(`${backendUrl}/lightning/balance`)
       .then((res) => {
-        // Divide our balance by 1000 since it is denominated in millisats
-        setBalance(res.data.balance / 1000);
+        setBalance(res.data.total_balance);
+      })
+      .catch((err) => console.log(err));
+  };
+
+  const getChannelBalance = () => {
+    axios
+      .get(`${backendUrl}/lightning/channelbalance`)
+      .then((res) => {
+        setChannelBalance(res.data.balance);
       })
       .catch((err) => console.log(err));
   };
 
   const getTransactions = () => {
-    // ToDo: Lookup how to move the X-API-Key to a .env file to keep it secret for when we push to Github
-    const headers = {
-      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
-    };
     axios
-      .get("http://bigbadpc.local:3007/api/v1/payments", { headers })
+      .get(`${backendUrl}/lightning/invoices`)
       .then((res) => {
         setTransactions(res.data);
       })
@@ -108,23 +124,32 @@ function App() {
   useEffect(() => {
     getPrice();
     getWalletBalance();
+    getChannelBalance();
     getTransactions();
-  }, [getPrice]);
+  }, []);
 
   useEffect(() => {
-    // setInterval will run whatever is in the callback function every friggin second
-    const interval = setInterval(() => {
+    const priceInterval = setInterval(() => {
       getPrice();
-      getWalletBalance();
-      getTransactions();
     }, 1000);
-    return () => clearInterval(interval);
+  
+    const walletAndTransactionsInterval = setInterval(() => {
+      getWalletBalance();
+      getChannelBalance();
+      getTransactions();
+    }, 5000);
+  
+    return () => {
+      clearInterval(priceInterval);
+      clearInterval(walletAndTransactionsInterval);
+    };
   }, []);
+  
 
   return (
     <div className="App">
-      <header >
-        <h1 > BTC-1701-D -- United Federation of Sovereign Individuals </h1>
+      <header>
+        <h1> BTC-1701-D -- United Federation of Sovereign Individuals </h1>
       </header>
       <div>
        <AudioPlayerComponent autoplay={true} />
@@ -132,7 +157,8 @@ function App() {
       <div className="row">
         <div className="button-holder-holder">
           <div className="button-holder">
-            <Buttons />
+          <Header isLoggedIn={isLoggedIn} user={user} />
+            <Buttons isLoggedIn={isLoggedIn} user={user} />
           </div>
         </div>
         <div className="button-next">
@@ -246,7 +272,7 @@ function App() {
         <div className="balance-card">
           <div className="balance-content">
             <h2>Satoshis</h2>
-            <p>{balance}</p>
+            <p>{balance} sats {channelBalance} sats</p>
           </div>
         </div>
         <div className="balance-card">
@@ -321,11 +347,6 @@ function App() {
       </footer>
       <div className="yessir">
         <h3>
-        <div className="video-container" autoplay="true" >
-          <VideoPlayer />
-        </div>
-        <p> - click for sound - - - - - - - - - - click for - </p>
-        <PdfModal />
         </h3>
       </div>
     </div>

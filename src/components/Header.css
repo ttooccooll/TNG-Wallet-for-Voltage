@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('Sterilict-L3aen.ttf') format('truetype');
+  }
+
+  .header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .auth-container {
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+  }
+  
+  .user {
+    background: linear-gradient(to right, rgba(212, 95, 16, 0.7) 0%, rgba(212, 95, 16, 1) 50%, rgba(212, 95, 16, 0.7) 100%);
+    border: 0px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: .7rem;
+    font-family: 'MyFont';
+    font-weight: bold;
+    width: 85px;
+    margin: 5px;
+    color: inherit;
+    text-decoration: inherit;
+    cursor: hand;
+    display: flex;
+    align-items: row;
+    justify-content: row;
+  }
+
+  .user:hover {
+    cursor: default;
+    opacity: .6;
+  }
+  
+  .auth-button {
+    background: linear-gradient(to right, rgba(212, 95, 16, 0.7) 0%, rgba(212, 95, 16, 1) 50%, rgba(212, 95, 16, 0.7) 100%);
+    border: 0px solid black;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: .7rem;
+    font-family: 'MyFont';
+    font-weight: bold;
+    width: 85px;
+    margin: 5px;
+    color: inherit;
+    text-decoration: inherit;
+    cursor: hand;
+  }
+  
+  .auth-button:hover {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  @keyframes shake {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+      transform: translate(-10px, -10px);
+    }
+    20%, 40%, 60%, 80% {
+      transform: translate(10px, 10px);
+    }
+  }
+
+  .shake {
+    animation: shake .5s cubic-bezier(0.25, 0.46, 0.45, 4) infinite;
+  }

@@ -6,7 +6,7 @@ const AudioPlayer = () => {
     <div>
       <AudioPlayerComponent
         autoPlay
-        src="tng_bridge_3.mp3" // Replace with the path to your audio file
+        src="/tng_bridge_3.mp3"
       />
     </div>
   );

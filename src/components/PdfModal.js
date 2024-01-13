@@ -18,7 +18,6 @@ function PdfModal() {
 
   return (
     <div>
-      {/* Open the modal when the "FAQ" link is clicked */}
       <span
         role="link"
         tabIndex={0}
@@ -30,15 +29,16 @@ function PdfModal() {
         }}
         style={{
           color: 'aqua',
-          cursor: 'default', // Change cursor to pointer on hover
+          cursor: 'default',
           textDecoration: 'none',
-          opacity: 1, // Set the initial opacity
+          fontSize: 'small',
+          opacity: 1,
         }}
         onMouseEnter={(e) => {
-          e.target.style.opacity = '0.6'; // Reduce opacity on hover
+          e.target.style.opacity = '0.6';
         }}
         onMouseLeave={(e) => {
-          e.target.style.opacity = '1'; // Restore opacity on mouse leave
+          e.target.style.opacity = '1';
         }}
       >
         FAQ
@@ -46,17 +46,17 @@ function PdfModal() {
 
       {modalOpen && (
         <div className="modal-overlay" onClick={() => closeModal()}>
-          {/* Center the modal vertically and horizontally */}
-          <div className="modal-content-centered">
+          <div className="modal-content-centered" >
             X
             <span className="close" onClick={() => closeModal()}>
               &times;
             </span>
             <div className="modal-inner">
               <img
-                src={`${process.env.PUBLIC_URL}/TNGFAQ.jpg`}
+                src={`${process.env.PUBLIC_URL}/TNGFAQ.png`}
                 alt="FAQ"
                 className="full-height-image"
+                style={{ border: '1px solid white' }}
               />
             </div>
           </div>

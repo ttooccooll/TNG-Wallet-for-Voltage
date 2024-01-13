@@ -6,7 +6,7 @@
 
 .chart-container {
   font-family: 'MyFont';
-  background: linear-gradient(135deg, #000000, #001f3f); /* Gradient background */
+  background: linear-gradient(135deg, #000000, #001f3f);
   cursor: crosshair;
   margin: 0% 0% 0% 0%;
   overflow: hidden;
@@ -17,17 +17,16 @@
   padding: 0% 6% 0% 6%;
 }
 
-/* Change color of x-axis labels (Time) */
 .tick text {
-  fill: rgb(239, 231, 203); /* Set your desired text color here */
+  fill: rgb(239, 231, 203);
   font-size: xx-small;
   background-color: black;
   font-family: 'MyFont';
 }
 
 .timestamp {
-  font-family: 'MyFont'; /* Apply your custom font */
-  color: rgb(239, 231, 203); /* Set your desired text color here */
+  font-family: 'MyFont';
+  color: rgb(239, 231, 203);
   font-size: xx-small;
   background-color: black;
   font-family: 'MyFont';

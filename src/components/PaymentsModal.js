@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import axios from "axios";
+import { axiosWithAuth } from "../utils/axiosWithAuth";
 import "./PaymentsModal.css";
 import QRCode from 'qrcode.react';
 
-const PaymentsModal = ({ modalState, setModalState }) => {
+const PaymentsModal = ({ modalState, setModalState, user }) => {
   // Our state for the info we will send to either generate a new invoice or pay an invoice
   const [formData, setFormData] = useState({
     amount: 0,
@@ -28,52 +28,49 @@ const PaymentsModal = ({ modalState, setModalState }) => {
     audio.play();
   };
 
+  const [error, setError] = useState(null);
+
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
   const handleSend = (e) => {
     // Keep the page from refreshing when the form is submitted
     e.preventDefault();
 
-    const headers = {
-      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
-    };
     const data = {
-      bolt11: formData.invoiceToPay,
-      out: true,
+      payment_request: formData.invoiceToPay,
+      user_id: user.id,
     };
-    axios
-      .post("http://bigbadpc.local:3007/api/v1/payments", data, { headers })
-      .then((res) =>
+
+    axiosWithAuth()
+      .post(`${backendUrl}/lightning/pay`, data)
+      .then((res) => {
         setPaymentInfo({
           paymentHash: res.data.payment_hash,
           checkingId: res.data.checking_id,
-        })
-      )
-      .catch((err) => console.log(err));
-
-    return;
+        });
+        // Reload the page to update the balance if the payment was successful
+        window.location.reload();
+      })
+      .catch((err) => setError(err.message));
   };
 
   const handleReceive = (e) => {
     // Keep the page from refreshing when the form is submitted
     e.preventDefault();
 
-    const headers = {
-      "X-Api-Key": "33d8516f5013403084bb9a0e60b4c61a",
-    };
     const data = {
-      amount: formData.amount,
-      out: false,
-      // ToDo: Add additional form for user to be able to customize the memo
-      memo: "LNBits",
+      value: formData.amount,
+      memo: "pleb-wallet-be",
+      user_id: user.id,
     };
-    axios
-      .post("http://bigbadpc.local:3007/api/v1/payments", data, { headers })
+    axiosWithAuth()
+      .post(`${backendUrl}/lightning/invoice`, data)
       .then((res) => setInvoice(res.data.payment_request))
-      .catch((err) => console.log(err));
+      .catch((err) => setError(err.message));
 
     return;
   };
 
-  // Function to clear all of our state when we close the modal
   const clearForms = () => {
     setModalState({
       type: "",
@@ -162,6 +159,12 @@ const PaymentsModal = ({ modalState, setModalState }) => {
           <p>Checking id: {paymentInfo.checkingId}</p>
         </section>
       )}
+      {error && (
+        <section>
+          <h3>Error</h3>
+          <p>{error}</p>
+        </section>
+      )}  
     </Modal>
   );
 };
