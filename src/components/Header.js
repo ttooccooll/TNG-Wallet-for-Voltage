@@ -54,7 +54,7 @@ const Header = ({ isLoggedIn, user }) => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
-    rank: "",
+    rank: ""
   });
 
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
@@ -71,7 +71,7 @@ const Header = ({ isLoggedIn, user }) => {
         setFormData({
           username: "",
           password: "",
-          rank: "",
+          rank: ""
         });
 
         playMP7();
@@ -84,14 +84,17 @@ const Header = ({ isLoggedIn, user }) => {
       });
   };
 
+  const [setError] = useState("");
+
   const [signupError, setSignupError] = useState(null);
   const [flashMessage, setFlashMessage] = useState(false);
 
   const handleSignup = (event) => {
-
-          // Check if the selected rank is "Plebian"
-  if (formData.rank !== "Plebian") {
     event.preventDefault();
+
+      // Check if the selected rank is "Plebian"
+  if (formData.rank !== "Plebian") {
+    // Handle the case where the rank is not "Plebian"
     playMP8();
     setSignupError(`There are no ${formData.rank}s in bitcoin.`);
     setFlashMessage(true);
@@ -108,12 +111,14 @@ const Header = ({ isLoggedIn, user }) => {
           setFormData({
             username: "",
             password: "",
+            rank: ""
           });
           playMP7();
         }
       })
       .catch((err) => {
         console.log(err);
+        setError("An error occurred during signup. Please try again.");
       });
   };
 
@@ -194,13 +199,13 @@ const Header = ({ isLoggedIn, user }) => {
       </Modal>
       <Modal
         isOpen={signupModalIsOpen}
-        onRequestClose={() => {playMP5(); setSignupModalIsOpen(false)}}
+        onRequestClose={() => {playMP5(); setSignupModalIsOpen(false);setError("");}}
         style={customStyles}
         contentLabel="Signup Modal"
       >
         <h2>Signup</h2>
-        <form onSubmit={handleSignup}>
         {signupError && <p className={`error-message ${flashMessage ? 'flash' : ''}`}>{signupError}</p>}
+        <form onSubmit={handleSignup}>
           <label>
             Username:
             <input
@@ -224,10 +229,10 @@ const Header = ({ isLoggedIn, user }) => {
           <label>
             Rank:
             <select
-              value={formData.rank}
-              onChange={(e) =>
-                setFormData({ ...formData, rank: e.target.value })
-              }
+                value={formData.rank}
+                onChange={(e) =>
+                  setFormData({ ...formData, rank: e.target.value })
+                }
             >
               <option value="Ensign">Ensign</option>
               <option value="Lieutenant">Lieutenant</option>
