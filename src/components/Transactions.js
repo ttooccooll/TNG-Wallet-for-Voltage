@@ -29,7 +29,7 @@ const Transactions = ({ transactions }) => {
   // Otherwise, it uses parts of the payment request to describe the transaction.
   const formatDescription = (tx) => {
     let description;
-    if (tx.settled !== false) {
+    if (tx.settled !== true) {
       description = "en route";
     } else {
       console.log("tx.send:", tx.send);
