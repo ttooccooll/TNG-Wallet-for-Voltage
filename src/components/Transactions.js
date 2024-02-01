@@ -55,7 +55,7 @@ const Transactions = ({ transactions }) => {
         >
           <p className="t">{formatDescription(tx)}</p>
           <p className="t">{formatValue(tx.value, tx.send)}</p>
-          <p className="t">Stardate {formatDate(tx.created_at)} UTC</p>
+          <p className="t">Stardate {formatDate(tx.created_at)} UTC +5</p>
         </div>
       ))}
     </div>
