@@ -272,7 +272,7 @@ function App() {
         <div className="balance-card">
           <div className="balance-content">
             <h2>Satoshis</h2>
-            <p>{balance} sats {channelBalance} sats</p>
+            <p>{channelBalance} sats</p>
           </div>
         </div>
         <div className="balance-card">
